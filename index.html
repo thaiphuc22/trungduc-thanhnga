@@ -362,8 +362,8 @@
   <button class="n" aria-label="Ảnh sau">›</button>
 </div>
 
-<!-- Music: đặt file nhạc tên music.mp3 cạnh index.html để bật nhạc nền -->
-<audio id="bgm" src="music.mp3" loop preload="none"></audio>
+<!-- Nhạc nền: phát tiếng từ MV chính thức trên YouTube, khung video được ẩn -->
+<div id="ytWrap" aria-hidden="true" style="position:fixed;left:-9999px;top:0;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none"><div id="yt"></div></div>
 <button class="music" id="musicBtn" aria-label="Bật/tắt nhạc">
   <svg viewBox="0 0 24 24"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
 </button>
@@ -383,10 +383,35 @@
   }
 
   // ----- Music -----
-  var audio = document.getElementById('bgm'), mBtn = document.getElementById('musicBtn');
-  function play(){ var p = audio.play(); if (p) p.then(function(){ mBtn.classList.add('show','playing'); }).catch(function(){}); }
+  // "Em Đồng Ý (I Do)" — Đức Phúc ft. 911 & Khắc Hưng, MV chính thức trên kênh ĐỨC PHÚC OFFICIAL.
+  // Đổi MUSIC.start (giây) nếu muốn bỏ qua đoạn mở đầu của MV.
+  var MUSIC = { videoId: 'IOe0tNoUGv8', start: 0, volume: 70 };
+  var mBtn = document.getElementById('musicBtn'), yt = null, ytReady = false, wantPlay = false, userPaused = false;
+  window.onYouTubeIframeAPIReady = function(){
+    yt = new YT.Player('yt', {
+      width: 1, height: 1, videoId: MUSIC.videoId,
+      playerVars: { autoplay: 0, controls: 0, disablekb: 1, fs: 0, playsinline: 1, rel: 0, start: MUSIC.start, loop: 1, playlist: MUSIC.videoId },
+      events: {
+        onReady: function(){ ytReady = true; yt.setVolume(MUSIC.volume); if (wantPlay) play(); },
+        onStateChange: function(e){
+          if (e.data === YT.PlayerState.PLAYING) mBtn.classList.add('playing');
+          if (e.data === YT.PlayerState.PAUSED) mBtn.classList.remove('playing');
+          if (e.data === YT.PlayerState.ENDED) { yt.seekTo(MUSIC.start); yt.playVideo(); }
+        },
+        onError: function(){ mBtn.classList.remove('show'); }
+      }
+    });
+  };
+  (function(){ var s = document.createElement('script'); s.src = 'https://www.youtube.com/iframe_api'; s.async = true; document.head.appendChild(s); })();
+  function play(){ wantPlay = true; userPaused = false; mBtn.classList.add('show'); if (ytReady) yt.playVideo(); }
+  function pause(){ wantPlay = false; if (ytReady) yt.pauseVideo(); }
   mBtn.addEventListener('click', function(){
-    if (audio.paused) play(); else { audio.pause(); mBtn.classList.remove('playing'); }
+    if (mBtn.classList.contains('playing')) { userPaused = true; pause(); } else play();
+  });
+  // Tạm dừng khi khách chuyển sang ứng dụng khác, phát tiếp khi quay lại.
+  document.addEventListener('visibilitychange', function(){
+    if (!ytReady || userPaused || !wantPlay) return;
+    if (document.hidden) yt.pauseVideo(); else yt.playVideo();
   });
 
   // ----- Cover -----
