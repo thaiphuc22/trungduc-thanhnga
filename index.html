@@ -445,17 +445,13 @@
   lb.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, { passive: true });
   lb.addEventListener('touchend', function(e){ var dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1)); });
 
-  // ----- RSVP qua Google Form -----
-  // Điền link và mã các ô của Google Form vào đây (xem README.md). Để trống thì form được ẩn
+  // ----- RSVP lưu vào Google Sheet (qua Google Apps Script, xem README.md) -----
+  // Dán link Web App của Apps Script vào đây. Để trống thì form được ẩn
   // và khách được nhắn báo trực tiếp với gia đình, tránh việc khách tưởng đã gửi thành công.
-  var RSVP = {
-    formUrl: '',            // vd: 'https://docs.google.com/forms/d/e/XXXX/formResponse'
-    fields: {               // mã từng ô, vd: 'entry.123456789'
-      name: '', attend: '', count: '', msg: ''
-    }
-  };
+  var RSVP_URL = '';   // vd: 'https://script.google.com/macros/s/XXXX/exec'
+
   var form = document.getElementById('rsvp'), thanks = document.getElementById('thanks');
-  if (!RSVP.formUrl) {
+  if (!RSVP_URL) {
     form.style.display = 'none';
     thanks.textContent = 'Quý Khách vui lòng báo trực tiếp với gia đình để chúng tôi chuẩn bị đón tiếp chu đáo nhất. Xin cảm ơn!';
     thanks.style.display = 'block';
@@ -464,12 +460,14 @@
     e.preventDefault();
     var f = new FormData(form), name = (f.get('name') || '').trim() || 'bạn';
     var yes = f.get('attend') === 'yes';
-    var body = new URLSearchParams();
-    function put(k, v){ if (RSVP.fields[k]) body.append(RSVP.fields[k], v); }
-    put('name', name);
-    put('attend', yes ? 'Sẽ tham dự' : 'Không tham dự');
-    put('count', yes ? f.get('count') : '0');
-    put('msg', (f.get('msg') || '').trim());
+    var body = new URLSearchParams({
+      name: name,
+      attend: yes ? 'Sẽ tham dự' : 'Không tham dự',
+      count: yes ? f.get('count') : '0',
+      msg: (f.get('msg') || '').trim().slice(0, 1000),
+      guest: to || '',
+      page: location.href
+    });
     var btn = form.querySelector('button[type=submit]');
     btn.disabled = true; btn.textContent = 'Đang gửi…';
     function show(ok){
@@ -480,8 +478,8 @@
       thanks.style.display = 'block';
       if (ok) form.style.display = 'none'; else { btn.disabled = false; btn.textContent = 'Gửi xác nhận'; }
     }
-    // Google Form không trả CORS, nên gửi kiểu no-cors: chỉ biết được lỗi mạng, không đọc được phản hồi.
-    fetch(RSVP.formUrl, { method: 'POST', mode: 'no-cors', body: body })
+    // Apps Script không trả CORS cho trang khác, nên gửi kiểu no-cors: chỉ phát hiện được lỗi mạng.
+    fetch(RSVP_URL, { method: 'POST', mode: 'no-cors', body: body })
       .then(function(){ show(true); }, function(){ show(false); });
   });
 
