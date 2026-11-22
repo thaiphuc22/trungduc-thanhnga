@@ -15,7 +15,7 @@ https://<tên-tài-khoản>.github.io/<tên-repo>/?to=Anh Hoàng
 
 ## Nhạc nền
 
-Đặt file `music.mp3` cạnh `index.html`. Nhạc phát khi khách bấm "Mở thiệp".
+Nhạc nền là `music/mot-doi.mp3` (bài "Một Đời"). Muốn đổi bài, thay file này bằng file khác cùng tên. Nhạc phát khi khách bấm "Mở thiệp".
 
 ## Lưu xác nhận tham dự vào Google Sheet
 
