@@ -4,334 +4,461 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Trung Đức &amp; Thanh Nga</title>
-<meta name="description" content="Thiệp mời lễ thành hôn Trung Đức & Thanh Nga — 16:00 Chủ Nhật, 06.12.2026">
+<meta name="description" content="Thiệp mời nhà trai — Lễ thành hôn Trung Đức & Thanh Nga, 16:00 Chủ Nhật, 06.12.2026">
+<meta name="theme-color" content="#5e7d3a">
 <meta property="og:title" content="Trung Đức & Thanh Nga — Thiệp cưới">
-<meta property="og:description" content="Trân trọng kính mời bạn đến chung vui cùng gia đình chúng tôi — 06.12.2026">
-<meta property="og:image" content="https://thaiphuc22.github.io/trungduc-thanhnga/images/04.jpg">
+<meta property="og:description" content="Trân trọng kính mời bạn đến chung vui cùng gia đình chúng tôi — 16:00, 06.12.2026 tại Trường tiểu học Thượng Bằng La, Lào Cai">
+<meta property="og:image" content="https://thaiphuc22.github.io/trungduc-thanhnga/images/05.jpg">
 <meta property="og:url" content="https://thaiphuc22.github.io/trungduc-thanhnga/">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
+  /* Layout: một cột thiệp dọc 430px, nền ngà; xanh lá xô thơm làm điểm nhấn, hoa rum & dải lụa vẽ bằng SVG */
   :root{
-    --wine:#5d041e; --wine-2:#7a0f2e; --ink:#000624; --cream:#fff9f5;
-    --paper:#ffffff; --muted:#6b5a5f; --line:rgba(93,4,30,.18);
-    --script:'Great Vibes',cursive; --serif:'Lora',Georgia,serif; --display:'Playfair Display',Georgia,serif;
+    --sage:#5e7d3a; --sage-d:#4a6530; --sage-l:#8fa96a; --leaf:#dfe8cc; --mist:#f1f5e8;
+    --ivory:#fdfdf8; --paper:#ffffff; --ink:#2f3826; --muted:#6f7a63; --line:rgba(94,125,58,.22);
+    --display:'Cormorant Garamond',Georgia,serif; --serif:'Lora',Georgia,serif; --script:'Great Vibes',cursive;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:#f3e9e6;color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  html{scroll-behavior:smooth;background:#eef2e4;font-variant-numeric:lining-nums}
+  body{background:linear-gradient(160deg,#fbfcf6,#e9efdc);color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
   body.locked{overflow:hidden;height:100vh}
   img{display:block;max-width:100%}
-  .card{max-width:430px;margin:0 auto;background:var(--paper);position:relative;overflow:hidden;box-shadow:0 0 60px rgba(93,4,30,.12)}
-  section{position:relative;padding:56px 20px;text-align:center}
-  .script{font-family:var(--script);font-weight:400;line-height:1.1}
-  .caps{text-transform:uppercase;letter-spacing:.14em}
-  .wine{color:var(--wine)}
-  .small{font-size:13px}
+  .card{max-width:430px;margin:0 auto;background:var(--ivory);position:relative;overflow:hidden;box-shadow:0 0 60px rgba(74,101,48,.12)}
+  section{position:relative;padding:56px 22px;text-align:center}
   p{line-height:1.75}
+  .title{font:700 15px var(--display);letter-spacing:.24em;text-transform:uppercase;color:var(--sage);display:flex;flex-direction:column;align-items:center;gap:8px}
+  .title svg{width:70px;height:12px}
+  .caps{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 
-  /* ornaments */
-  .orn{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--wine);margin:14px auto}
-  .orn::before,.orn::after{content:"";height:1px;width:64px;background:currentColor;opacity:.5}
-  .orn svg{width:18px;height:18px;fill:currentColor}
+  /* ---------- Decorations ---------- */
+  .calla{position:absolute;pointer-events:none}
+  .ribbon{display:block;width:100%;height:auto}
+  .petal{position:fixed;top:-20px;color:var(--sage-l);opacity:.5;font-size:14px;pointer-events:none;z-index:1;animation:fall linear infinite}
+  @keyframes fall{to{transform:translateY(110vh) rotate(300deg)}}
 
   /* ---------- Cover ---------- */
-  .cover{position:fixed;inset:0;z-index:50;display:flex;justify-content:center;background:rgba(40,0,12,.55);transition:opacity .8s ease,visibility .8s}
+  .cover{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#fcfdf8,#e6edd6);transition:opacity .9s ease,visibility .9s;padding:20px}
   .cover.gone{opacity:0;visibility:hidden}
-  .cover-inner{width:100%;max-width:430px;height:100%;background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 24px;text-align:center;position:relative;overflow:hidden}
-  .cover-inner::before{content:"";position:absolute;inset:14px;border:1px solid var(--line);pointer-events:none}
-  .cover h1{font-family:var(--script);font-weight:400;color:var(--wine);font-size:54px;line-height:1}
-  .cover .date{font-family:var(--display);letter-spacing:.3em;font-size:18px;margin:8px 0 18px;color:var(--ink)}
-  .cover .ph{width:62%;max-width:240px;aspect-ratio:3/4;padding:8px;background:#fff;box-shadow:0 12px 30px rgba(93,4,30,.18);transform:rotate(-2deg)}
-  .cover .ph img{width:100%;height:100%;object-fit:cover}
-  .cover .names{font-family:var(--script);font-size:38px;color:var(--ink);margin-top:20px}
-  .cover .invite-lbl{margin-top:14px;font-size:14px;color:var(--muted);font-style:italic}
-  .cover .guest{font-family:var(--display);font-size:24px;color:var(--wine);min-height:30px}
-  .btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;font:500 14px var(--serif);letter-spacing:.12em;text-transform:uppercase;padding:13px 28px;border-radius:999px;background:var(--wine);color:#fff;box-shadow:0 8px 20px rgba(93,4,30,.3);text-decoration:none;transition:transform .2s,background .2s}
-  .btn:hover{background:var(--wine-2);transform:translateY(-1px)}
-  .btn:focus-visible{outline:2px solid var(--wine);outline-offset:3px}
-  .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.7);box-shadow:none}
-  .cover .btn{margin-top:22px;animation:pulse 2s ease-in-out infinite}
-  @keyframes pulse{50%{transform:scale(1.05)}}
+  .env{position:relative;width:100%;max-width:320px;background:#fff;border-radius:10px;padding:34px 24px 32px;text-align:center;box-shadow:0 24px 50px rgba(47,56,38,.22);overflow:hidden}
+  .env .calla.tl{top:-6px;left:-10px;width:64px;transform:rotate(-20deg)}
+  .env .calla.br{bottom:-8px;right:-10px;width:70px;transform:rotate(160deg)}
+  .badge{width:56px;height:56px;border-radius:50%;margin:0 auto;background:radial-gradient(circle at 35% 30%,#7d9c55,var(--sage-d));display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(74,101,48,.35)}
+  .badge svg{width:24px;height:24px;fill:#fff}
+  .env .names{font-family:var(--script);color:var(--sage);font-size:36px;line-height:1.1;margin-top:22px}
+  .env .names i{display:block;font-family:var(--display);font-style:normal;font-size:20px;color:var(--ink)}
+  .divider{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px 0;color:var(--sage)}
+  .divider::before,.divider::after{content:"";height:1px;width:56px;background:currentColor;opacity:.45}
+  .divider svg{width:14px;height:14px;fill:currentColor}
+  .env .date{font-size:17px;color:var(--muted)}
+  .env .to-lbl{margin-top:16px;font-size:14px;color:var(--muted);font-style:italic}
+  .env .guest{font-size:19px;color:var(--ink);min-height:26px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:600 15px var(--serif);padding:13px 30px;border-radius:999px;background:var(--sage);color:#fff;text-decoration:none;box-shadow:0 10px 22px rgba(74,101,48,.3);transition:transform .2s,background .2s}
+  .btn:hover{background:var(--sage-d);transform:translateY(-1px)}
+  .btn:focus-visible{outline:2px solid var(--sage);outline-offset:3px}
+  .btn.sm{padding:10px 20px;font-size:13px}
+  .btn.line{background:#fff;color:var(--sage);border:1px solid var(--sage);box-shadow:none}
+  .env .btn{margin-top:20px}
+
+  /* ---------- Hiệu ứng mở thiệp ---------- */
+  .badge{position:relative}
+  .badge::before,.badge::after{content:"";position:absolute;inset:-3px;border-radius:50%;border:2px solid var(--sage-l);opacity:0;pointer-events:none}
+  .badge{animation:breathe 2.4s ease-in-out infinite}
+  @keyframes breathe{50%{box-shadow:0 8px 18px rgba(74,101,48,.35),0 0 0 8px rgba(143,169,106,.18)}}
+  .cover.opening .badge{animation:thump .55s cubic-bezier(.3,1.6,.5,1)}
+  .cover.opening .badge::before{animation:ripple .9s ease-out}
+  .cover.opening .badge::after{animation:ripple .9s ease-out .18s}
+  @keyframes thump{40%{transform:scale(1.22)}100%{transform:scale(1)}}
+  @keyframes ripple{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(2.6)}}
+  .env .calla{transition:transform 1s cubic-bezier(.4,0,.2,1),opacity .9s ease}
+  .cover.opening .env .calla.tl{transform:translate(-80px,-60px) rotate(-70deg);opacity:0}
+  .cover.opening .env .calla.br{transform:translate(80px,70px) rotate(220deg);opacity:0}
+  .cover.opening .env{animation:lift 1.15s cubic-bezier(.55,0,.3,1) .3s forwards}
+  @keyframes lift{0%{transform:none;opacity:1}30%{transform:translateY(10px) scale(.985);opacity:1}100%{transform:translateY(-75%) scale(.9);opacity:0}}
+  .cover{transition:opacity .8s ease,visibility .8s}
+  .spark{position:fixed;left:0;top:0;z-index:70;pointer-events:none;will-change:transform,opacity;line-height:1}
+  .spark svg{display:block;width:100%;height:100%}
+  @media (prefers-reduced-motion:reduce){
+    .badge,.cover.opening .badge,.cover.opening .badge::before,.cover.opening .badge::after,.cover.opening .env{animation:none}
+  }
 
   /* ---------- Hero ---------- */
-  .hero{padding:40px 20px 30px;background:linear-gradient(var(--cream),#fff)}
-  .hero .kicker{font-family:var(--script);font-size:40px;color:var(--wine)}
-  .hero .frame{width:68%;margin:18px auto 0;padding:9px;background:#fff;box-shadow:0 16px 40px rgba(93,4,30,.16);position:relative}
-  .hero .frame img{width:100%;aspect-ratio:3/4;object-fit:cover}
-  .hero .frame::after{content:"";position:absolute;inset:-12px;border:1px solid var(--line)}
-  .hero .names{font-family:var(--script);font-size:46px;margin-top:28px;line-height:1.05}
-  .hero .names span{display:block;font-size:30px;color:var(--wine)}
-  .hero .d{font-family:var(--display);letter-spacing:.32em;font-size:16px;margin-top:10px}
+  .hero{padding:30px 0 0;min-height:600px}
+  .hero .calla.top{top:-24px;right:-26px;width:190px;transform:rotate(14deg)}
+  .photos{position:relative;height:420px;margin:0 22px}
+  .ph{position:absolute;background:#fff;padding:6px;border:5px solid var(--leaf);box-shadow:0 12px 26px rgba(47,56,38,.16)}
+  .ph img{width:100%;height:100%;object-fit:cover}
+  .ph.a{left:6px;top:40px;width:56%;height:250px;transform:rotate(-5deg)}
+  .ph.b{right:12px;top:150px;width:54%;height:250px;transform:rotate(5deg)}
+  .hero .nm{position:relative;margin:4px 22px 0;height:110px}
+  .hero .nm .amp{position:absolute;left:50%;top:-6px;transform:translateX(-50%);font:120px/1 var(--script);color:var(--leaf);z-index:0}
+  .hero .nm b{position:absolute;font:italic 600 30px var(--display);letter-spacing:.04em;color:var(--sage);z-index:1;text-transform:uppercase}
+  .hero .nm b:first-of-type{left:14px;top:8px}
+  .hero .nm b:last-of-type{right:14px;top:52px}
+  .hero .ribbon{margin-top:-6px}
+  .hero .hdate{font:600 15px var(--display);letter-spacing:.3em;color:var(--muted);margin-top:-6px;padding-bottom:22px}
 
-  /* ---------- Countdown ---------- */
-  .count .lead{font-style:italic;color:var(--muted)}
-  .timer{display:flex;justify-content:center;gap:10px;margin-top:16px}
-  .timer div{width:70px;padding:12px 0;border:1px solid var(--line);background:var(--cream)}
-  .timer b{display:block;font:600 26px var(--display);color:var(--wine)}
+  /* ---------- Family ---------- */
+  .fam{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+  .fam > div{min-width:0}
+  .fam .side{font:italic 600 22px var(--display);color:var(--sage)}
+  .fam .who{font-size:14.5px;line-height:1.8;margin-top:6px}
+  .fam .who b{font-weight:600}
+  .fam .addr{font-size:13px;color:var(--muted);font-style:italic;line-height:1.6;margin-top:8px}
+  .news{margin-top:34px}
+  .news .caps{line-height:1.9}
+  .couple{margin-top:18px;display:grid;gap:4px}
+  .couple .n{font:44px/1.1 var(--script);color:var(--sage-d)}
+  .couple .r{font-size:11px;letter-spacing:.32em;color:var(--muted);text-transform:uppercase}
+  .couple .amp{font:30px var(--script);color:var(--sage-l)}
+
+  /* ---------- Ceremony ---------- */
+  .cere{background:var(--mist)}
+  .cere .head{font:700 14px var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--sage);line-height:1.8}
+  .cere .time{font:600 15px var(--serif);letter-spacing:.2em;margin-top:12px}
+  .dateblock{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:14px;margin:16px auto 0;max-width:320px}
+  .dateblock span{font:600 13px var(--serif);letter-spacing:.2em;text-transform:uppercase;padding:8px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .dateblock b{font:600 64px/1 var(--display);color:var(--sage)}
+  .cere .yr{font:600 18px var(--display);letter-spacing:.4em;margin-top:6px}
+  .cere .lunar{font-style:italic;color:var(--muted);font-size:14px;margin-top:8px}
+
+  /* ---------- Album: vòng xoay 3D ---------- */
+  .album{padding-left:0;padding-right:0;overflow:hidden}
+  .album .title{padding:0 22px}
+  .ring-wrap{position:relative;margin-top:22px}
+  .ring{position:relative;height:360px;display:flex;align-items:center;justify-content:center;perspective:1000px;touch-action:pan-y;user-select:none;-webkit-user-select:none;outline:none}
+  .ring:focus-visible{outline:2px solid var(--sage);outline-offset:4px;border-radius:12px}
+  .c3{position:absolute;height:92%;aspect-ratio:2/3;border-radius:16px;overflow:hidden;cursor:pointer;background:var(--leaf) center/cover no-repeat;box-shadow:0 18px 36px rgba(47,56,38,.28);transition:transform 1.1s cubic-bezier(.45,.05,.25,1),opacity 1.1s ease;backface-visibility:hidden;-webkit-backface-visibility:hidden;will-change:transform,opacity;-webkit-tap-highlight-color:transparent}
+  .c3 img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s;pointer-events:none}
+  .c3 img.ok{opacity:1}
+  .c3.on{box-shadow:0 0 0 2px rgba(255,255,255,.5),0 22px 44px rgba(47,56,38,.34)}
+  .c3.on::after{content:"";position:absolute;inset:0;border-radius:16px;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.28) 50%,transparent 65%);background-size:250% 100%;animation:sheen 1.6s ease .5s 1 both;pointer-events:none}
+  @keyframes sheen{from{background-position:120% 0}to{background-position:-60% 0}}
+  .ring.drag .c3{transition:none}
+  .ring-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:200;width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.75);color:var(--sage-d);font-size:20px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.12);display:none}
+  .ring-nav.p{left:12px}.ring-nav.n{right:12px}
+  @media (hover:hover) and (pointer:fine){ .ring-nav{display:block} }
+  .count{margin-top:12px;font:600 14px var(--display);letter-spacing:.18em;color:var(--muted);font-variant-numeric:lining-nums tabular-nums}
+  .count b{color:var(--sage);font-size:18px}
+  .swipe-hint{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:4px}
+
+  /* ---------- Xem ảnh toàn màn hình ---------- */
+  .lb{position:fixed;inset:0;z-index:300;display:none;touch-action:none;user-select:none;-webkit-user-select:none}
+  .lb.open{display:block}
+  .lb .bg{position:absolute;inset:0;background:#141a0e;opacity:0;transition:opacity .3s}
+  .lb.open .bg{opacity:.96}
+  .lb .stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .lb img{max-width:100vw;max-height:100vh;max-height:100dvh;object-fit:contain;transform-origin:0 0;will-change:transform}
+  .lb .top{position:absolute;left:0;right:0;top:0;display:flex;justify-content:space-between;align-items:center;padding:max(12px,env(safe-area-inset-top)) 14px 12px;color:#fff;font:600 15px var(--display);letter-spacing:.2em;transition:opacity .25s;background:linear-gradient(rgba(0,0,0,.35),transparent)}
+  .lb button{background:rgba(255,255,255,.16);color:#fff;border:0;width:44px;height:44px;border-radius:50%;font-size:20px;cursor:pointer}
+  .lb .nv{position:absolute;top:50%;transform:translateY(-50%);display:none}
+  .lb .nv.p{left:12px}.lb .nv.n{right:12px}
+  @media (hover:hover) and (pointer:fine){ .lb .nv{display:block} }
+  .lb .tip{position:absolute;left:0;right:0;bottom:max(16px,env(safe-area-inset-bottom));text-align:center;color:rgba(255,255,255,.7);font-size:12.5px;transition:opacity .4s;padding:0 16px}
+  .lb.zoomed .top,.lb.zoomed .tip,.lb.dragging .tip{opacity:0}
+
+  /* ---------- Countdown & calendar ---------- */
+  .timer{display:flex;justify-content:center;gap:10px;margin-top:18px}
+  .timer div{width:70px;padding:12px 0;background:#fff;border:1px solid var(--line);border-radius:8px}
+  .timer b{display:block;font:600 28px var(--display);color:var(--sage);font-variant-numeric:lining-nums tabular-nums}
   .timer small{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-
-  /* ---------- Couple ---------- */
-  .couple{padding-top:20px}
-  .pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
-  .pc{background:#fff;padding:7px 7px 14px;box-shadow:0 10px 26px rgba(0,6,36,.1)}
-  .pc img{width:100%;aspect-ratio:4/5;object-fit:cover}
-  .pc:nth-child(2){margin-top:56px}
-  .pc .role{font-family:var(--script);font-size:26px;color:var(--wine);margin-top:8px}
-  .pc .nm{font:600 13px var(--serif);letter-spacing:.18em;text-transform:uppercase}
-  .couple .quote{margin-top:30px;font-style:italic;color:var(--muted);font-size:15px}
-
-  /* ---------- Banner ---------- */
-  .banner{padding:0;height:330px;color:#fff}
-  .banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%}
-  .banner::after{content:"";position:absolute;inset:auto 0 0 0;height:60%;background:linear-gradient(transparent,rgba(30,0,8,.65))}
-  .banner .t{position:absolute;left:0;right:0;bottom:20px;z-index:1}
-  .banner .t .a{font-family:var(--script);font-size:56px;line-height:.9}
-  .banner .t .b{font-family:var(--script);font-size:72px;line-height:.9}
-
-  /* ---------- Invite ---------- */
-  .invite .lead{font-size:13px;letter-spacing:.14em;text-transform:uppercase;line-height:1.9}
-  .fam{display:grid;grid-template-columns:1fr 1px 1fr;gap:16px;margin-top:26px}
-  .fam .sep{background:var(--line)}
-  .fam h3{font-family:var(--script);font-weight:400;font-size:30px;color:var(--wine)}
-  .fam p{font-size:15px;line-height:1.8}
-  .fam .faddr{font-size:13px;color:var(--muted);font-style:italic;line-height:1.6;margin-top:6px}
-  .invite .big{font-family:var(--script);font-size:54px;line-height:1.05;margin-top:30px}
-  .invite .big span{display:block;font-size:34px;color:var(--wine)}
-  .invite .big small{display:block;font:500 11px var(--serif);letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-top:-4px}
-
-  /* ---------- Event ---------- */
-  .event{padding:10px 20px 50px}
-  .ev{background:var(--wine);color:#fff;padding:34px 22px;position:relative}
-  .ev::before{content:"";position:absolute;inset:8px;border:1px solid rgba(255,255,255,.35);pointer-events:none}
-  .ev h2{font-family:var(--script);font-weight:400;font-size:44px;line-height:1}
-  .ev .when{font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-top:12px}
-  .ev .day{display:inline-block;font:700 32px var(--display);letter-spacing:.08em;margin:14px auto 6px;padding:6px 18px;border-top:1px solid rgba(255,255,255,.6);border-bottom:1px solid rgba(255,255,255,.6)}
-  .ev .lunar{font-style:italic;font-size:14px;opacity:.9}
-  .ev .where{margin-top:18px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
-  .ev .addr{font-size:16px;margin-top:6px;line-height:1.6}
-  .ev .acts{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:20px}
-  .ev .btn{padding:10px 18px;font-size:12px}
-  .blink{animation:blink 1.6s ease-in-out infinite}
-  @keyframes blink{50%{opacity:.55}}
-
-  /* ---------- Story ---------- */
-  .story h2{font-family:var(--display);font-size:40px;letter-spacing:.2em;color:var(--wine);font-weight:500}
-  .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
-  .trio img{width:100%;aspect-ratio:2/3;object-fit:cover;box-shadow:0 8px 20px rgba(0,6,36,.12)}
-  .trio img:nth-child(2){transform:translateY(-14px)}
-  .story p{margin-top:20px;font-size:15px;color:var(--muted)}
-
-  /* ---------- Calendar ---------- */
-  .cal-wrap{padding:10px 20px 56px}
-  .cal{background:var(--wine);color:#fff;padding:32px 22px 26px;margin:0 16px;position:relative}
-  .cal .lead{font-style:italic;font-size:15px;line-height:1.6}
-  .cal .month{font-family:var(--script);font-size:50px;line-height:1.1;margin-top:4px}
-  .cal .year{font-size:12px;letter-spacing:.3em;opacity:.8}
-  .grid7{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:16px;font-size:14px}
-  .grid7 .h{font-size:11px;letter-spacing:.08em;opacity:.7;padding-bottom:6px}
+  .cal{margin:26px auto 0;max-width:330px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 16px}
+  .cal h4{font:600 20px var(--display);color:var(--sage);letter-spacing:.06em}
+  .grid7{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:10px;font-size:14px}
+  .grid7 .h{font-size:11px;color:var(--muted);padding-bottom:4px}
   .grid7 .c{aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative}
-  .grid7 .c.on{font-weight:700;color:var(--wine)}
-  .grid7 .c.on svg{position:absolute;inset:-2px;width:calc(100% + 4px);height:calc(100% + 4px);fill:#fff;animation:beat 1.4s ease-in-out infinite}
+  .grid7 .c.on{color:#fff;font-weight:700}
+  .grid7 .c.on svg{position:absolute;inset:-3px;width:calc(100% + 6px);height:calc(100% + 6px);fill:var(--sage);animation:beat 1.4s ease-in-out infinite}
   .grid7 .c.on span{position:relative}
   @keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.15)}30%{transform:scale(1)}45%{transform:scale(1.1)}}
+  .cal .btn{margin-top:14px}
 
-  /* ---------- Album ---------- */
-  .album h2{font-family:var(--script);font-weight:400;font-size:56px;color:var(--wine)}
-  .gal{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
-  .gal button{border:0;padding:0;background:none;cursor:zoom-in;overflow:hidden;display:block}
-  .gal img{width:100%;aspect-ratio:2/3;object-fit:cover;transition:transform .6s}
-  .gal button:hover img{transform:scale(1.05)}
-  .gal button.wide{grid-column:span 2}
-  .gal button.wide img{aspect-ratio:4/3}
-  .lb{position:fixed;inset:0;z-index:60;background:rgba(10,0,4,.92);display:none;align-items:center;justify-content:center}
-  .lb.open{display:flex}
-  .lb img{max-width:94vw;max-height:86vh;object-fit:contain;box-shadow:0 10px 40px #000}
-  .lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:46px;height:46px;border-radius:50%;font-size:22px;cursor:pointer}
-  .lb .x{top:16px;right:16px}.lb .p{left:10px;top:50%;transform:translateY(-50%)}.lb .n{right:10px;top:50%;transform:translateY(-50%)}
+  /* ---------- Venue ---------- */
+  .venue .place{font:italic 600 24px var(--display);color:var(--sage-d);margin-top:16px}
+  .venue .addr{font-size:16px;margin-top:6px}
+  .venue .btn{margin-top:18px}
 
   /* ---------- RSVP ---------- */
-  .rsvp{background:var(--cream)}
-  .rsvp h2{font-family:var(--script);font-weight:400;font-size:46px;color:var(--wine)}
-  .rsvp .lead{font-size:14px;color:var(--muted);font-style:italic}
-  form{margin-top:20px;text-align:left;display:grid;gap:12px}
+  .rsvp{background:var(--mist)}
+  .rsvp .lead{font-size:14px;color:var(--muted);font-style:italic;margin-top:12px}
+  form{margin-top:18px;text-align:left;display:grid;gap:12px}
   label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-  input,select,textarea{width:100%;font:15px var(--serif);color:var(--ink);padding:12px 14px;border:1px solid var(--line);background:#fff;border-radius:0;margin-top:5px}
-  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--wine)}
+  input,select,textarea{width:100%;font:15px var(--serif);color:var(--ink);padding:12px 14px;border:1px solid var(--line);background:#fff;border-radius:8px;margin-top:5px}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--sage)}
   textarea{min-height:84px;resize:vertical}
   .seg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:5px}
   .seg input{position:absolute;opacity:0;pointer-events:none}
-  .seg span{display:block;text-align:center;padding:11px 6px;border:1px solid var(--line);background:#fff;font-size:14px;cursor:pointer;text-transform:none;letter-spacing:0;color:var(--ink)}
-  .seg input:checked + span{background:var(--wine);color:#fff;border-color:var(--wine)}
-  .seg input:focus-visible + span{outline:2px solid var(--wine);outline-offset:2px}
+  .seg span{display:block;text-align:center;padding:11px 6px;border:1px solid var(--line);background:#fff;border-radius:8px;font-size:14px;cursor:pointer;text-transform:none;letter-spacing:0;color:var(--ink)}
+  .seg input:checked + span{background:var(--sage);color:#fff;border-color:var(--sage)}
+  .seg input:focus-visible + span{outline:2px solid var(--sage);outline-offset:2px}
   form .btn{justify-self:center;margin-top:6px}
-  .thanks-msg{display:none;margin-top:18px;padding:18px;border:1px dashed var(--wine);color:var(--wine);font-style:italic}
+  .note{display:none;margin-top:16px;padding:16px;border:1px dashed var(--sage);border-radius:8px;color:var(--sage-d);font-style:italic;background:#fff}
 
-  /* ---------- Thank you ---------- */
-  .ty{padding:0;height:420px;color:#fff}
+  /* ---------- Guestbook ---------- */
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .wform{display:grid;gap:14px;margin-top:22px;text-align:left}
+  .wform input,.wform textarea{margin:0;border:1.5px solid var(--sage-l);border-radius:8px;padding:14px 16px;font-size:16px;background:#fff}
+  .wform textarea{min-height:130px}
+  .wform input:focus,.wform textarea:focus{border-color:var(--sage);box-shadow:0 0 0 3px rgba(94,125,58,.12)}
+  .wform ::placeholder{color:#9aa38e}
+  .wrow{display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .wand{width:48px;height:44px;border:0;border-radius:8px;background:var(--mist);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .2s}
+  .wand svg{width:24px;height:24px}
+  .wand:hover{transform:rotate(-8deg)}
+  .wand.spin svg{animation:wand .6s ease}
+  @keyframes wand{30%{transform:rotate(-25deg) scale(1.15)}70%{transform:rotate(12deg)}}
+  .wand:focus-visible,.wsend:focus-visible{outline:2px solid var(--sage);outline-offset:2px}
+  .wsend{border:0;border-radius:6px;background:var(--sage);color:#fff;font:600 15px var(--display);letter-spacing:.12em;text-transform:uppercase;padding:12px 26px;cursor:pointer;box-shadow:0 6px 14px rgba(74,101,48,.25)}
+  .wsend:disabled{opacity:.6}
+  .book .note{text-align:center}
+  .wishes{display:grid;gap:10px;margin-top:20px;text-align:left;max-height:440px;overflow:auto;padding:2px;overscroll-behavior:contain}
+  .wish{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;animation:pop .45s ease}
+  .wish b{color:var(--sage-d);font-size:15px}
+  .wish p{font-size:14.5px;line-height:1.6;margin-top:4px;overflow-wrap:anywhere}
+  .wish time{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+  .empty{color:var(--sage-l);font-style:italic;font-size:15px;margin-top:22px;text-align:center}
+
+  /* ---------- Gift ---------- */
+  .gift{background:var(--mist)}
+  .box{margin:56px auto 0;width:150px;height:140px;position:relative;cursor:pointer;border:0;background:none}
+  .box .lid{position:absolute;left:-8px;right:-8px;top:18px;height:34px;background:var(--sage);border-radius:6px;transition:transform .6s cubic-bezier(.3,1.4,.5,1)}
+  .box .body{position:absolute;left:0;right:0;top:50px;bottom:0;background:var(--sage-l);border-radius:0 0 8px 8px}
+  .box .rib-v{position:absolute;left:50%;top:18px;bottom:0;width:18px;transform:translateX(-50%);background:var(--leaf)}
+  .box .bow{position:absolute;left:50%;top:-4px;transform:translateX(-50%);font:34px var(--script);color:var(--sage-d)}
+  .box:hover .lid{transform:translateY(-6px) rotate(-3deg)}
+  .box.open .lid{transform:translateY(-40px) rotate(-14deg)}
+  .box:focus-visible{outline:2px solid var(--sage);outline-offset:6px}
+  .tap{margin-top:10px;font-size:13px;color:var(--muted);font-style:italic}
+  .bank{display:none;margin:20px auto 0;max-width:300px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+  .bank.show{display:block;animation:pop .5s ease}
+  @keyframes pop{from{opacity:0;transform:translateY(12px)}}
+  .bank img{width:190px;margin:0 auto}
+  .bank .who{font:600 16px var(--serif);margin-top:10px}
+  .bank .acc{font:600 20px var(--display);letter-spacing:.08em;color:var(--sage-d);font-variant-numeric:tabular-nums}
+  .bank .bn{font-size:13px;color:var(--muted)}
+  .bank .btn{margin-top:12px}
+
+  /* ---------- Thanks ---------- */
+  .ty{padding:0;height:440px;color:#fff}
   .ty img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%}
-  .ty::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(30,0,8,.05) 30%,rgba(30,0,8,.72))}
-  .ty .t{position:absolute;left:16px;right:16px;bottom:24px;z-index:1}
-  .ty h2{font-family:var(--script);font-weight:400;font-size:60px}
-  .ty p{font-size:14px;line-height:1.7}
-  footer{padding:20px;text-align:center;font-size:12px;color:var(--muted);background:#fff;letter-spacing:.1em}
+  .ty::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(30,40,20,0) 35%,rgba(30,40,20,.75))}
+  .ty .t{position:absolute;left:18px;right:18px;bottom:26px;z-index:1}
+  .ty h2{font:400 58px var(--script)}
+  .ty p{font-size:15px}
+  footer{padding:18px;text-align:center;font:600 13px var(--display);letter-spacing:.2em;color:var(--muted);background:var(--ivory)}
 
   /* ---------- Music ---------- */
-  .music{position:fixed;z-index:40;right:max(14px,calc(50% - 215px + 14px));bottom:18px;width:44px;height:44px;border-radius:50%;border:0;background:var(--wine);color:#fff;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(93,4,30,.35)}
+  .music{position:fixed;z-index:40;right:max(14px,calc(50% - 215px + 14px));bottom:18px;width:46px;height:46px;border-radius:50%;border:0;background:var(--sage);color:#fff;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:0 0 0 6px rgba(94,125,58,.18),0 6px 18px rgba(74,101,48,.35)}
   .music.show{display:flex}
   .music svg{width:20px;height:20px;fill:currentColor}
   .music.playing svg{animation:spin 4s linear infinite}
   @keyframes spin{to{transform:rotate(360deg)}}
 
-  /* ---------- Reveal animations ---------- */
+  /* ---------- Máy tính: bên trái là ảnh & thông tin chính (đứng yên), bên phải là thiệp cuộn ---------- */
+  .ring.glide .c3{transition:none}
+  .ring.glide .c3.on::after{display:none}
+  .desk{display:none}
+  @media (hover:hover) and (pointer:fine){ .ring{cursor:grab} .ring.drag{cursor:grabbing} }
+  @media (min-width:1000px){
+    html{background:linear-gradient(160deg,#fbfcf6,#e2e9d0) fixed}
+    body{background:transparent;display:grid;grid-template-columns:minmax(0,1fr) 440px;column-gap:clamp(40px,5vw,96px);max-width:1280px;margin:0 auto;padding:0 clamp(24px,4vw,56px)}
+    .card{max-width:none;width:440px;margin:0;box-shadow:0 0 0 1px var(--line),0 30px 80px rgba(47,56,38,.16)}
+    .music{right:calc((100vw - min(1280px,100vw)) / 2 + clamp(24px,4vw,56px) + 16px);bottom:24px}
+    .desk{display:flex;position:sticky;top:0;height:100vh;align-items:center;justify-content:center;text-align:center;padding:28px 0;min-width:0}
+    .desk-in{display:grid;justify-items:center;gap:14px;max-width:560px;position:relative}
+    .arch{position:relative;width:28vh;max-width:300px;aspect-ratio:2/3;margin-bottom:8px}
+    .arch .fr{position:absolute;inset:0;border-radius:999px 999px 16px 16px;overflow:hidden;border:6px solid #fff;box-shadow:0 24px 50px rgba(47,56,38,.22)}
+    .arch .fr img{width:100%;height:100%;object-fit:cover}
+    .arch::before{content:"";position:absolute;inset:-12px;border-radius:999px 999px 22px 22px;border:1px solid var(--sage-l);opacity:.6}
+    .arch .calla{width:40%;bottom:0;z-index:1}
+    .arch .calla.l{left:-26%;transform:rotate(-24deg)}
+    .arch .calla.r{right:-26%;transform:scaleX(-1) rotate(-24deg)}
+    .desk .caps{line-height:1.8}
+    .dn{font:clamp(38px,3.5vw,56px)/1.1 var(--script);color:var(--sage-d);white-space:nowrap}
+    .dn i{font:italic 500 .5em var(--display);color:var(--sage-l);padding:0 .15em}
+    .desk .divider{margin:0}
+    .dd{font:600 16px var(--display);letter-spacing:.24em;text-transform:uppercase}
+    .dl,.dp{font-size:14.5px;color:var(--muted);font-style:italic;line-height:1.6}
+    .dcd{display:flex;gap:22px;justify-content:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+    .dcd b{display:block;font:600 30px/1.1 var(--display);color:var(--sage);letter-spacing:0;font-variant-numeric:lining-nums tabular-nums}
+    .dbtns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:6px}
+  }
+  @media (min-width:1000px) and (max-height:780px){
+    .arch{width:23vh}
+    .dl{display:none}
+    .desk-in{gap:10px}
+  }
+
+  /* ---------- Reveal (trang vẫn hiện đủ nếu không có JS) ---------- */
   .rv{transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
   .anim .rv:not(.in){opacity:0}
-  .anim .rv.up:not(.in){transform:translateY(36px)}
-  .anim .rv.left:not(.in){transform:translateX(-46px)}
-  .anim .rv.right:not(.in){transform:translateX(46px)}
-  .anim .rv.zoom:not(.in){transform:scale(.85)}
-  .anim .rv.flip:not(.in){transform:perspective(600px) rotateX(70deg)}
+  .anim .rv.up:not(.in){transform:translateY(34px)}
+  .anim .rv.left:not(.in){transform:translateX(-44px)}
+  .anim .rv.right:not(.in){transform:translateX(44px)}
+  .anim .rv.zoom:not(.in){transform:scale(.86)}
   @media (prefers-reduced-motion:reduce){
-    .rv{opacity:1;transform:none;transition:none}
-    .blink,.cover .btn,.music.playing svg,.grid7 .c.on svg{animation:none}
+    .rv{transition:none}
+    .petal,.grid7 .c.on svg,.music.playing svg{animation:none}
+    .petal{display:none}
   }
 </style>
 </head>
 <body class="locked">
 
+<!-- Hoa rum dùng lại nhiều lần -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="spathe" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffef4"/><stop offset=".6" stop-color="#f4efd6"/><stop offset="1" stop-color="#cfd9a8"/>
+    </linearGradient>
+    <linearGradient id="silk" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#b9c98f"/><stop offset=".25" stop-color="#eef3df"/><stop offset=".5" stop-color="#9fb574"/><stop offset=".75" stop-color="#e6edd2"/><stop offset="1" stop-color="#a9bd80"/>
+    </linearGradient>
+    <symbol id="calla" viewBox="0 0 120 240">
+      <path d="M63 236C60 190 61 140 70 96" fill="none" stroke="#7f9a55" stroke-width="3.2" stroke-linecap="round"/>
+      <path d="M58 236C50 200 40 170 22 150" fill="none" stroke="#9bb170" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M70 98C44 92 18 66 14 30 34 40 58 34 80 10 104 30 110 64 92 88 86 94 78 97 70 98Z" fill="url(#spathe)" stroke="#d8d6b4" stroke-width="1.2"/>
+      <path d="M70 98C66 74 64 54 80 10" fill="none" stroke="#e3dfbf" stroke-width="1.4"/>
+      <path d="M71 92C68 76 69 62 75 50" fill="none" stroke="#e6c766" stroke-width="5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="leaf" viewBox="0 0 24 24"><path d="M5 19C5 10 11 4 20 4c0 9-6 15-15 15Zm0 0 9-9"/></symbol>
+    <symbol id="heart" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.6 2.9 4.5 6.7 4.5c2.2 0 3.6 1.2 4.3 2.4h2c.7-1.2 2.1-2.4 4.3-2.4 3.8 0 5.8 4.1 4.3 7.3C19.5 16.4 12 21 12 21z"/></symbol>
+  </defs>
+</svg>
+
 <!-- ============ COVER ============ -->
 <div class="cover" id="cover" role="dialog" aria-label="Thiệp mời">
-  <div class="cover-inner">
-    <h1>Save the date</h1>
-    <div class="date">06 . 12 . 2026</div>
-    <div class="ph"><img src="images/04.jpg" alt="Trung Đức và Thanh Nga"></div>
-    <div class="names">Trung Đức &amp; Thanh Nga</div>
-    <div class="invite-lbl" id="guestLbl">Trân trọng kính mời</div>
+  <div class="env">
+    <svg class="calla tl" viewBox="0 0 120 240" aria-hidden="true"><use href="#calla"/></svg>
+    <svg class="calla br" viewBox="0 0 120 240" aria-hidden="true"><use href="#calla"/></svg>
+    <div class="badge"><svg viewBox="0 0 24 24"><use href="#heart"/></svg></div>
+    <div class="names">Trung Đức<i>&amp;</i>Thanh Nga</div>
+    <div class="divider"><svg viewBox="0 0 24 24"><use href="#leaf"/></svg></div>
+    <div class="date">6 tháng 12, 2026</div>
+    <div class="to-lbl" id="toLbl">Trân trọng kính mời</div>
     <div class="guest" id="guestName">Quý Khách</div>
-    <button class="btn" id="openBtn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
-      Mở thiệp
-    </button>
+    <button class="btn" id="openBtn">Mở thiệp</button>
   </div>
 </div>
+
+<!-- Chỉ hiện trên máy tính (màn hình từ 1000px) -->
+<aside class="desk" aria-label="Thông tin lễ thành hôn">
+  <div class="desk-in">
+    <div class="arch">
+      <div class="fr"><img src="images/a01.jpg" alt="Trung Đức và Thanh Nga" loading="lazy" decoding="async"></div>
+      <svg class="calla l" viewBox="0 0 120 240" aria-hidden="true"><use href="#calla"/></svg>
+      <svg class="calla r" viewBox="0 0 120 240" aria-hidden="true"><use href="#calla"/></svg>
+    </div>
+    <div class="caps">Trân trọng báo tin lễ thành hôn</div>
+    <div class="dn">Trung Đức<i>&amp;</i>Thanh Nga</div>
+    <div class="divider"><svg viewBox="0 0 24 24"><use href="#leaf"/></svg></div>
+    <div class="dd">16:00 · Chủ Nhật · 06.12.2026</div>
+    <div class="dl">(Tức ngày 28 tháng 10 năm Bính Ngọ)</div>
+    <div class="dp">Trường tiểu học Thượng Bằng La, phân hiệu Trần Phú B, tỉnh Lào Cai</div>
+    <div class="dcd" aria-hidden="true"><div><b id="dk-d">00</b>Ngày</div><div><b id="dk-h">00</b>Giờ</div><div><b id="dk-m">00</b>Phút</div><div><b id="dk-s">00</b>Giây</div></div>
+    <div class="dbtns"><a class="btn sm" href="#rsvpSec">Xác nhận tham dự</a><a class="btn sm line" href="#bookSec">Gửi lời chúc</a></div>
+  </div>
+</aside>
 
 <main class="card">
 
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="kicker rv up">We're getting married</div>
-    <div class="frame rv zoom"><img src="images/09.jpg" alt="Ảnh cưới Trung Đức và Thanh Nga"></div>
-    <div class="names rv up">Trung Đức<span>&amp;</span>Thanh Nga</div>
-    <div class="d rv up">06 . 12 . 2026</div>
+    <svg class="calla top" viewBox="0 0 120 240" aria-hidden="true"><use href="#calla"/></svg>
+    <div class="photos">
+      <div class="ph a rv left"><img src="images/05.jpg" alt="Trung Đức và Thanh Nga"></div>
+      <div class="ph b rv right"><img src="images/02.jpg" alt="Trung Đức và Thanh Nga"></div>
+    </div>
+    <div class="nm rv up"><span class="amp" aria-hidden="true">&amp;</span><b>Trung Đức</b><b>Thanh Nga</b></div>
+    <svg class="ribbon" viewBox="0 0 430 110" aria-hidden="true">
+      <path d="M-10 70C40 20 90 20 140 60S240 110 290 60 380 10 440 50" fill="none" stroke="url(#silk)" stroke-width="22" stroke-linecap="round"/>
+      <path d="M-10 64C40 14 90 14 140 54S240 104 290 54 380 4 440 44" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2"/>
+      <path d="M0 108C20 80 30 50 10 20" fill="none" stroke="#8fa96a" stroke-width="1.4"/>
+    </svg>
+    <div class="hdate">06 . 12 . 2026</div>
+  </section>
+
+  <!-- ============ FAMILY & ANNOUNCEMENT ============ -->
+  <section>
+    <h2 class="title rv up">Thông tin lễ cưới<svg viewBox="0 0 70 12" aria-hidden="true"><path d="M0 6h26M44 6h26" stroke="currentColor" stroke-width="1"/><use href="#leaf" x="29" y="-3" width="12" height="18" fill="currentColor"/></svg></h2>
+    <div class="fam">
+      <div class="rv left">
+        <div class="side">Nhà trai</div>
+        <div class="who">Ông <b>Ngô Đăng Ngà</b><br>Bà <b>Nguyễn Thị Thường</b></div>
+        <div class="addr">Thôn 10, xã Thượng Bằng La, tỉnh Lào Cai</div>
+      </div>
+      <div class="rv right">
+        <div class="side">Nhà gái</div>
+        <div class="who">Ông <b>Bùi Văn Soạn</b><br>Bà <b>Nguyễn Thị Tiễn</b></div>
+        <div class="addr">Thôn Mê Linh 1, xã Bắc Tiên Hưng, tỉnh Hưng Yên</div>
+      </div>
+    </div>
+    <div class="news rv up">
+      <div class="caps">Trân trọng báo tin<br>lễ thành hôn của con chúng tôi</div>
+      <div class="couple">
+        <div class="n">Trung Đức</div><div class="r">Trưởng nam</div>
+        <div class="amp">&amp;</div>
+        <div class="n">Thanh Nga</div><div class="r">Út nữ</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CEREMONY ============ -->
+  <section class="cere">
+    <div class="head rv up">Lễ thành hôn<br>được cử hành</div>
+    <div class="time rv up">VÀO LÚC 16:00</div>
+    <div class="dateblock rv zoom"><span>Chủ Nhật</span><b>06</b><span>Tháng 12</span></div>
+    <div class="yr rv up">2026</div>
+    <div class="lunar rv up">(Tức ngày 28 tháng 10 năm Bính Ngọ)</div>
+  </section>
+
+  <!-- ============ ALBUM ============ -->
+  <section class="album" aria-roledescription="carousel" aria-label="Album ảnh cưới">
+    <h2 class="title rv up">Album ảnh<svg viewBox="0 0 70 12" aria-hidden="true"><path d="M0 6h26M44 6h26" stroke="currentColor" stroke-width="1"/><use href="#leaf" x="29" y="-3" width="12" height="18" fill="currentColor"/></svg></h2>
+    <div class="ring-wrap rv up">
+      <div class="ring" id="ring" tabindex="0" aria-label="Album ảnh. Dùng phím mũi tên để chuyển ảnh, Enter để phóng to"></div>
+      <button class="ring-nav p" id="rPrev" aria-label="Ảnh trước">‹</button>
+      <button class="ring-nav n" id="rNext" aria-label="Ảnh sau">›</button>
+      <div class="count" id="count" aria-live="polite"><b>01</b> / 16</div>
+      <div class="swipe-hint">Ảnh tự trượt · vuốt để xem nhanh · chạm ảnh để phóng to</div>
+    </div>
   </section>
 
   <!-- ============ COUNTDOWN ============ -->
-  <section class="count" style="padding-top:20px">
-    <p class="lead rv up">Chúng mình sẽ chính thức về chung một nhà sau</p>
-    <div class="timer rv flip" id="timer" aria-live="polite">
+  <section class="cere">
+    <h2 class="title rv up">Cùng đếm ngược<svg viewBox="0 0 70 12" aria-hidden="true"><path d="M0 6h26M44 6h26" stroke="currentColor" stroke-width="1"/><use href="#leaf" x="29" y="-3" width="12" height="18" fill="currentColor"/></svg></h2>
+    <div class="timer rv up" aria-live="polite">
       <div><b id="cd-d">00</b><small>Ngày</small></div>
       <div><b id="cd-h">00</b><small>Giờ</small></div>
       <div><b id="cd-m">00</b><small>Phút</small></div>
       <div><b id="cd-s">00</b><small>Giây</small></div>
     </div>
-  </section>
-
-  <!-- ============ COUPLE ============ -->
-  <section class="couple">
-    <div class="pair">
-      <figure class="pc rv left">
-        <img src="images/07.jpg" alt="Chú rể Trung Đức" loading="lazy">
-        <figcaption><div class="role">Chú rể</div><div class="nm">Trung Đức</div></figcaption>
-      </figure>
-      <figure class="pc rv right">
-        <img src="images/02.jpg" alt="Cô dâu Thanh Nga" loading="lazy">
-        <figcaption><div class="role">Cô dâu</div><div class="nm">Thanh Nga</div></figcaption>
-      </figure>
-    </div>
-    <p class="quote rv flip">“Tình yêu không phải là nhìn nhau, mà là cùng nhau nhìn về một hướng. Và từ hôm nay, chúng mình sẽ cùng nhau bước tiếp trên con đường ấy.”</p>
-  </section>
-
-  <!-- ============ BANNER ============ -->
-  <section class="banner">
-    <img src="images/11.jpg" alt="" loading="lazy">
-    <div class="t">
-      <div class="a rv left">Just</div>
-      <div class="b rv right">married</div>
-    </div>
-  </section>
-
-  <!-- ============ INVITATION ============ -->
-  <section class="invite">
-    <p class="lead rv up">Trân trọng kính mời Quý Khách đến<br>chung vui cùng gia đình chúng tôi</p>
-    <div class="fam">
-      <div class="rv left">
-        <h3>Nhà trai</h3>
-        <p>Ông <b>Ngô Đăng Ngà</b><br>Bà <b>Nguyễn Thị Thường</b></p>
-        <p class="faddr">Thôn 10, xã Thượng Bằng La,<br>tỉnh Lào Cai</p>
-      </div>
-      <div class="sep"></div>
-      <div class="rv right">
-        <h3>Nhà gái</h3>
-        <p>Ông <b>Bùi Văn Soạn</b><br>Bà <b>Nguyễn Thị Tiễn</b></p>
-        <p class="faddr">Thôn Mê Linh 1, xã Bắc Tiên Hưng,<br>tỉnh Hưng Yên</p>
-      </div>
-    </div>
-    <div class="orn rv zoom"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.6 2.9 4.5 6.7 4.5c2.2 0 3.6 1.2 4.3 2.4h2c.7-1.2 2.1-2.4 4.3-2.4 3.8 0 5.8 4.1 4.3 7.3C19.5 16.4 12 21 12 21z"/></svg></div>
-    <div class="big rv flip">Trung Đức<small>Trưởng nam</small><span>&amp;</span>Thanh Nga<small>Út nữ</small></div>
-  </section>
-
-  <!-- ============ EVENT ============ -->
-  <section class="event">
-    <div class="ev rv zoom">
-      <h2>Lễ Thành Hôn</h2>
-      <div class="when">Được tổ chức vào lúc<br>16:00 — Chủ Nhật</div>
-      <div class="day">06.12.2026</div>
-      <div class="lunar">(Tức ngày 28 tháng 10 năm Bính Ngọ)</div>
-      <div class="where">Tại</div>
-      <div class="addr">Trường tiểu học Thượng Bằng La,<br>phân hiệu Trần Phú B, tỉnh Lào Cai</div>
-      <div class="acts">
-        <a class="btn ghost blink" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Tr%C6%B0%E1%BB%9Dng%20ti%E1%BB%83u%20h%E1%BB%8Dc%20Th%C6%B0%E1%BB%A3ng%20B%E1%BA%B1ng%20La%2C%20ph%C3%A2n%20hi%E1%BB%87u%20Tr%E1%BA%A7n%20Ph%C3%BA%20B%2C%20t%E1%BB%89nh%20L%C3%A0o%20Cai">Xem chỉ đường</a>
-        <a class="btn ghost" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=L%E1%BB%85%20th%C3%A0nh%20h%C3%B4n%20Trung%20%C4%90%E1%BB%A9c%20%26%20Thanh%20Nga&dates=20261206T090000Z/20261206T130000Z&location=Tr%C6%B0%E1%BB%9Dng%20ti%E1%BB%83u%20h%E1%BB%8Dc%20Th%C6%B0%E1%BB%A3ng%20B%E1%BA%B1ng%20La%2C%20ph%C3%A2n%20hi%E1%BB%87u%20Tr%E1%BA%A7n%20Ph%C3%BA%20B%2C%20t%E1%BB%89nh%20L%C3%A0o%20Cai">Lưu vào lịch</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ STORY ============ -->
-  <section class="story" style="padding-top:10px">
-    <h2 class="rv zoom">OUR LOVE</h2>
-    <div class="trio">
-      <img class="rv left" src="images/05.jpg" alt="" loading="lazy">
-      <img class="rv flip" src="images/12.jpg" alt="" loading="lazy">
-      <img class="rv right" src="images/20.jpg" alt="" loading="lazy">
-    </div>
-    <p class="rv up">Mỗi câu chuyện tình yêu đều có một hành trình riêng. Sau những tháng ngày cùng nhau trưởng thành, cùng nhau vượt qua bao vui buồn, chúng mình quyết định nắm tay nhau đi tiếp quãng đường còn lại — và mong có bạn cùng chứng kiến khoảnh khắc ấy.</p>
-  </section>
-
-  <!-- ============ CALENDAR ============ -->
-  <section class="cal-wrap">
     <div class="cal rv zoom">
-      <div class="lead">Đám cưới của chúng mình<br>sẽ diễn ra vào</div>
-      <div class="month">December</div>
-      <div class="year">2026</div>
+      <h4>Tháng 12 / 2026</h4>
       <div class="grid7" id="cal"></div>
+      <a class="btn sm line" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=L%E1%BB%85%20th%C3%A0nh%20h%C3%B4n%20Trung%20%C4%90%E1%BB%A9c%20%26%20Thanh%20Nga&dates=20261206T090000Z/20261206T130000Z&location=Tr%C6%B0%E1%BB%9Dng%20ti%E1%BB%83u%20h%E1%BB%8Dc%20Th%C6%B0%E1%BB%A3ng%20B%E1%BA%B1ng%20La%2C%20ph%C3%A2n%20hi%E1%BB%87u%20Tr%E1%BA%A7n%20Ph%C3%BA%20B%2C%20t%E1%BB%89nh%20L%C3%A0o%20Cai">Thêm vào lịch</a>
     </div>
   </section>
 
-  <!-- ============ ALBUM ============ -->
-  <section class="album" style="padding-top:10px">
-    <h2 class="rv up">Album of love</h2>
-    <div class="gal" id="gal"></div>
+  <!-- ============ VENUE ============ -->
+  <section class="venue">
+    <h2 class="title rv up">Địa điểm<svg viewBox="0 0 70 12" aria-hidden="true"><path d="M0 6h26M44 6h26" stroke="currentColor" stroke-width="1"/><use href="#leaf" x="29" y="-3" width="12" height="18" fill="currentColor"/></svg></h2>
+    <div class="place rv up">Trường tiểu học Thượng Bằng La</div>
+    <div class="addr rv up">Phân hiệu Trần Phú B,<br>xã Thượng Bằng La, tỉnh Lào Cai</div>
+    <a class="btn rv up" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Tr%C6%B0%E1%BB%9Dng%20ti%E1%BB%83u%20h%E1%BB%8Dc%20Th%C6%B0%E1%BB%A3ng%20B%E1%BA%B1ng%20La%2C%20ph%C3%A2n%20hi%E1%BB%87u%20Tr%E1%BA%A7n%20Ph%C3%BA%20B%2C%20t%E1%BB%89nh%20L%C3%A0o%20Cai">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+      Chỉ đường
+    </a>
   </section>
 
   <!-- ============ RSVP ============ -->
-  <section class="rsvp">
-    <h2 class="rv up">Xác nhận tham dự</h2>
-    <p class="lead rv up">Hãy xác nhận sự có mặt của Quý Khách để gia đình chúng tôi chuẩn bị đón tiếp một cách chu đáo nhất. Trân trọng!</p>
+  <section class="rsvp" id="rsvpSec">
+    <h2 class="title rv up">Xác nhận tham dự<svg viewBox="0 0 70 12" aria-hidden="true"><path d="M0 6h26M44 6h26" stroke="currentColor" stroke-width="1"/><use href="#leaf" x="29" y="-3" width="12" height="18" fill="currentColor"/></svg></h2>
+    <p class="lead rv up">Hãy xác nhận sự có mặt của Quý Khách để gia đình chúng tôi chuẩn bị đón tiếp chu đáo nhất.</p>
     <form id="rsvp" class="rv up">
-      <label>Họ và tên<input name="name" id="rsvpName" required autocomplete="name" placeholder="Tên của bạn"></label>
-      <label>Lời nhắn<textarea name="msg" placeholder="Gửi lời chúc đến cô dâu chú rể…"></textarea></label>
+      <label>Họ và tên<input id="rsvpName" name="name" required autocomplete="name" placeholder="Tên của bạn"></label>
       <div>
         <label>Bạn sẽ đến chứ?</label>
         <div class="seg">
@@ -340,11 +467,47 @@
         </div>
       </div>
       <label>Số người tham dự
-        <select name="count"><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select>
+        <select id="rsvpCount" name="count"><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select>
       </label>
       <button class="btn" type="submit">Gửi xác nhận</button>
     </form>
-    <div class="thanks-msg" id="thanks" role="status"></div>
+    <div class="note" id="thanks" role="status"></div>
+  </section>
+
+  <!-- ============ GUESTBOOK ============ -->
+  <section id="bookSec" class="book">
+    <h2 class="title rv up">Sổ lưu bút<svg viewBox="0 0 70 12" aria-hidden="true"><path d="M0 6h26M44 6h26" stroke="currentColor" stroke-width="1"/><use href="#leaf" x="29" y="-3" width="12" height="18" fill="currentColor"/></svg></h2>
+    <form id="wishForm" class="wform rv up">
+      <label class="sr" for="wName">Tên của bạn</label>
+      <input id="wName" name="name" required maxlength="60" autocomplete="name" placeholder="Nhập tên*">
+      <label class="sr" for="wMsg">Lời chúc</label>
+      <textarea id="wMsg" name="msg" required maxlength="500" placeholder="Nhập lời chúc*"></textarea>
+      <div class="wrow">
+        <button type="button" class="wand" id="wand" title="Gợi ý lời chúc" aria-label="Gợi ý lời chúc">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20 15 9l1.5 1.5L5.5 21.5zM15 9l2-2 1.5 1.5-2 2z" fill="#7a6a4f"/><path d="M18 2l.7 1.8L20.5 4.5l-1.8.7L18 7l-.7-1.8-1.8-.7 1.8-.7zM21 9l.4 1 1 .4-1 .4-.4 1-.4-1-1-.4 1-.4zM11 3l.4 1 1 .4-1 .4-.4 1-.4-1-1-.4 1-.4z" fill="#e2b93b"/></svg>
+        </button>
+        <button type="submit" class="wsend" id="wSend">Gửi lời chúc</button>
+      </div>
+    </form>
+    <div class="note" id="wNote" role="status"></div>
+    <div class="wishes" id="wishes" aria-live="polite"></div>
+    <p class="empty" id="wEmpty">Chưa có lời chúc nào. Hãy là người đầu tiên!</p>
+  </section>
+
+  <!-- ============ GIFT ============ -->
+  <section class="gift">
+    <h2 class="title rv up">Hộp quà mừng<svg viewBox="0 0 70 12" aria-hidden="true"><path d="M0 6h26M44 6h26" stroke="currentColor" stroke-width="1"/><use href="#leaf" x="29" y="-3" width="12" height="18" fill="currentColor"/></svg></h2>
+    <button class="box rv zoom" id="giftBox" aria-expanded="false" aria-controls="bank" aria-label="Mở hộp quà mừng">
+      <span class="body"></span><span class="rib-v"></span><span class="lid"></span><span class="bow" aria-hidden="true">&amp;</span>
+    </button>
+    <div class="tap" id="tap">Nhấn để mở</div>
+    <div class="bank" id="bank">
+      <img src="images/qr-chu-re.svg" alt="Mã QR chuyển khoản MBBank 0263328686666 — Ngo Trung Duc" width="190" height="190">
+      <div class="who">Chú rể Trung Đức</div>
+      <div class="bn">MBBank · NGO TRUNG DUC</div>
+      <div class="acc" id="accNo">0263328686666</div>
+      <button class="btn sm" id="copyAcc">Sao chép số tài khoản</button>
+    </div>
   </section>
 
   <!-- ============ THANK YOU ============ -->
@@ -352,18 +515,19 @@
     <img src="images/21.jpg" alt="" loading="lazy">
     <div class="t">
       <h2 class="rv up">Thank you</h2>
-      <p class="rv up">Cảm ơn Quý Khách đã dành tình cảm cho gia đình chúng tôi! Sự hiện diện của Quý Khách chính là món quà ý nghĩa nhất đối với chúng mình.</p>
+      <p class="rv up">Sự hiện diện của Quý Khách là niềm vinh hạnh của gia đình chúng tôi!</p>
     </div>
   </section>
   <footer>Trung Đức &amp; Thanh Nga · 06.12.2026</footer>
 </main>
 
-<!-- Lightbox -->
-<div class="lb" id="lb" role="dialog" aria-label="Xem ảnh">
-  <img id="lbImg" alt="">
-  <button class="x" aria-label="Đóng">✕</button>
-  <button class="p" aria-label="Ảnh trước">‹</button>
-  <button class="n" aria-label="Ảnh sau">›</button>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Xem ảnh">
+  <div class="bg" id="lbBg"></div>
+  <div class="stage" id="stage"><img id="lbImg" alt="" draggable="false"></div>
+  <div class="top"><span id="lbCount"></span><button id="lbClose" aria-label="Đóng">✕</button></div>
+  <button class="nv p" id="lbPrev" aria-label="Ảnh trước">‹</button>
+  <button class="nv n" id="lbNext" aria-label="Ảnh sau">›</button>
+  <div class="tip" id="lbTip">Vuốt ngang để xem tiếp · vuốt xuống để đóng · chạm 2 lần để phóng to</div>
 </div>
 
 <!-- Nhạc nền: "Một Đời" (file do cô dâu chú rể cung cấp) -->
@@ -374,101 +538,439 @@
 
 <script>
 (function(){
-  // ----- Guest name from URL: index.html?to=Anh%20Hoàng -----
+  // ===== Cấu hình =====
+  // Link Web App của Google Apps Script (dùng chung với thiệp nhà trai). Để trống thì form được ẩn.
+  var RSVP_URL = 'https://script.google.com/macros/s/AKfycbyOgCtVERtNQmSgH3tV-78X3VUBaXGB0qEG72HpJs8o8NGahWKEHhDEbQ1GXPQDS95_UQ/exec';
+  var CARD = 'Nhà trai';
+  var WEDDING = new Date('2026-12-06T16:00:00+07:00').getTime();
+  var PHOTOS = ['a01', 'a02', 'a03', 'a04', 'a05', 'a06', 'a07', 'a08', 'a09', 'a10', 'a11', 'a12', 'a13', 'a14', 'a15', 'a16'];  // album: ảnh trong thư mục wedding/image, theo thứ tự tên file 1 → 16
+
+  // ----- Tên khách: ?to=Anh%20Hoàng -----
   var to = new URLSearchParams(location.search).get('to');
-  if (!to && location.hash.length > 1) {
-    to = decodeURIComponent(location.hash.slice(1)).replace(/[-_]+/g, ' ').trim()
-      .replace(/(^|\s)\S/g, function(c){ return c.toUpperCase(); });
-  }
   if (to) {
-    document.getElementById('guestLbl').textContent = 'Kính mời:';
+    document.getElementById('toLbl').textContent = 'Thân mời';
     document.getElementById('guestName').textContent = to;
     document.getElementById('rsvpName').value = to;
   }
 
-  // ----- Music -----
-  var audio = document.getElementById('bgm'), mBtn = document.getElementById('musicBtn'), userPaused = false;
+  // ----- Cánh hoa rơi trên bìa -----
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    for (var i = 0; i < 10; i++) {
+      var s = document.createElement('span');
+      s.className = 'petal'; s.textContent = '✻'; s.setAttribute('aria-hidden', 'true');
+      s.style.left = (Math.random() * 100) + 'vw';
+      s.style.fontSize = (10 + Math.random() * 10) + 'px';
+      s.style.animationDuration = (9 + Math.random() * 10) + 's';
+      s.style.animationDelay = (-Math.random() * 15) + 's';
+      document.body.appendChild(s);
+    }
+  }
+
+  // ----- Nhạc -----
+  var audio = document.getElementById('bgm'), mBtn = document.getElementById('musicBtn'), userPaused = false, wasPlaying = false;
   audio.volume = 0.7;
   audio.addEventListener('playing', function(){ mBtn.classList.add('playing'); });
   audio.addEventListener('pause', function(){ mBtn.classList.remove('playing'); });
   audio.addEventListener('error', function(){ mBtn.classList.remove('show'); });
-  function play(){
-    userPaused = false; mBtn.classList.add('show');
-    var p = audio.play(); if (p) p.catch(function(){ /* trình duyệt chặn: khách bấm nút nhạc để phát */ });
-  }
-  mBtn.addEventListener('click', function(){
-    if (audio.paused) play(); else { userPaused = true; audio.pause(); }
-  });
-  // Tạm dừng khi khách chuyển sang ứng dụng khác, phát tiếp khi quay lại.
-  var wasPlaying = false;
+  function play(){ userPaused = false; mBtn.classList.add('show'); var p = audio.play(); if (p) p.catch(function(){}); }
+  mBtn.addEventListener('click', function(){ if (audio.paused) play(); else { userPaused = true; audio.pause(); } });
   document.addEventListener('visibilitychange', function(){
     if (document.hidden) { wasPlaying = !audio.paused; audio.pause(); }
     else if (wasPlaying && !userPaused) play();
   });
 
-  // ----- Cover -----
+  // ----- Mở thiệp: tiếng chuông, hoa bung, thiệp bay lên -----
+  // Âm thanh tạo bằng Web Audio (không cần file): một tiếng "vút" nhẹ rồi chuỗi chuông ngân.
+  function chime(){
+    try {
+      var C = window.AudioContext || window.webkitAudioContext; if (!C) return;
+      var ac = new C(), t = ac.currentTime + .02, out = ac.createGain();
+      out.gain.value = .22; out.connect(ac.destination);
+      // vút: tiếng ồn trắng lọc dải, quét lên
+      var len = Math.floor(ac.sampleRate * .7), buf = ac.createBuffer(1, len, ac.sampleRate), d = buf.getChannelData(0);
+      for (var i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 2);
+      var ns = ac.createBufferSource(); ns.buffer = buf;
+      var bp = ac.createBiquadFilter(); bp.type = 'bandpass'; bp.Q.value = .9;
+      bp.frequency.setValueAtTime(500, t); bp.frequency.exponentialRampToValueAtTime(3200, t + .55);
+      var ng = ac.createGain(); ng.gain.setValueAtTime(.0001, t); ng.gain.exponentialRampToValueAtTime(.28, t + .07); ng.gain.exponentialRampToValueAtTime(.0001, t + .65);
+      ns.connect(bp); bp.connect(ng); ng.connect(out); ns.start(t);
+      // chuông: Mi – Sol# – Si – Mi (cao), mỗi nốt có thêm hoạ âm để nghe như chuông nhỏ
+      [1318.5, 1661.2, 1975.5, 2637].forEach(function(f, k){
+        var st = t + .14 + k * .085;
+        [[1, .3, 1.5], [2.76, .07, .45], [5.4, .025, .2]].forEach(function(h){
+          var o = ac.createOscillator(), g = ac.createGain();
+          o.type = 'sine'; o.frequency.value = f * h[0];
+          g.gain.setValueAtTime(.0001, st); g.gain.exponentialRampToValueAtTime(h[1], st + .008); g.gain.exponentialRampToValueAtTime(.0001, st + h[2]);
+          o.connect(g); g.connect(out); o.start(st); o.stop(st + h[2] + .05);
+        });
+      });
+      setTimeout(function(){ ac.close && ac.close(); }, 2600);
+    } catch (err) {}
+  }
+  // Hoa và lá bung ra từ nút "Mở thiệp" rồi rơi xuống
+  function burst(x, y){
+    if (reduceOpen || !Element.prototype.animate) return;
+    var colors = ['#5e7d3a', '#8fa96a', '#b9c98f', '#dfe8cc', '#f4efd6'];
+    for (var i = 0; i < 30; i++) {
+      var el = document.createElement('span'), leaf = i % 3 !== 0, sz = leaf ? 10 + Math.random() * 10 : 12 + Math.random() * 8;
+      el.className = 'spark'; el.setAttribute('aria-hidden', 'true');
+      el.style.width = el.style.height = sz + 'px';
+      el.style.color = colors[i % colors.length];
+      el.innerHTML = leaf ? '<svg viewBox="0 0 24 24" fill="currentColor"><use href="#leaf"/></svg>' : '<span style="font-size:' + sz + 'px">✿</span>';
+      document.body.appendChild(el);
+      var ang = -Math.PI / 2 + (Math.random() - .5) * Math.PI * 1.5, v = 90 + Math.random() * 170;
+      var dx = Math.cos(ang) * v, dy = Math.sin(ang) * v, rot = (Math.random() - .5) * 720;
+      var a = el.animate([
+        { transform: 'translate(' + x + 'px,' + y + 'px) scale(.3) rotate(0deg)', opacity: 1 },
+        { transform: 'translate(' + (x + dx) + 'px,' + (y + dy) + 'px) scale(1) rotate(' + rot / 2 + 'deg)', opacity: 1, offset: .45 },
+        { transform: 'translate(' + (x + dx * 1.3) + 'px,' + (y + dy + 260 + Math.random() * 120) + 'px) scale(.8) rotate(' + rot + 'deg)', opacity: 0 }
+      ], { duration: 1500 + Math.random() * 700, easing: 'cubic-bezier(.2,.65,.35,1)', delay: Math.random() * 120 });
+      a.onfinish = (function(n){ return function(){ n.remove(); }; })(el);
+    }
+  }
+  var reduceOpen = matchMedia('(prefers-reduced-motion: reduce)').matches, opened = false;
   document.getElementById('openBtn').addEventListener('click', function(){
-    document.getElementById('cover').classList.add('gone');
-    document.body.classList.remove('locked');
+    if (opened) return; opened = true;
+    var cover = document.getElementById('cover'), r = this.getBoundingClientRect();
+    chime();
+    // nhạc nền phải bắt đầu ngay trong lúc khách bấm (điện thoại chặn nếu gọi trễ), rồi to dần
+    try { audio.volume = 0; } catch (err) {}
     play();
-    reveal();
+    var v = 0, fade = setInterval(function(){ v = Math.min(.7, v + .035); try { audio.volume = v; } catch (err) {} if (v >= .7) clearInterval(fade); }, 80);
+    if (reduceOpen) {
+      cover.classList.add('gone');
+    } else {
+      cover.classList.add('opening');
+      burst(r.left + r.width / 2, r.top + r.height / 2);
+      setTimeout(function(){ cover.classList.add('gone'); }, 1050);
+    }
+    document.body.classList.remove('locked');
+    setTimeout(function(){
+      reveal(); albumStart();
+      document.querySelectorAll('.petal').forEach(function(el){ el.remove(); });
+    }, reduceOpen ? 0 : 900);
   });
 
-  // ----- Countdown (16:00 giờ Việt Nam, 06/12/2026) -----
-  var target = new Date('2026-12-06T16:00:00+07:00').getTime();
+  // ----- Đếm ngược -----
   function pad(n){ return (n < 10 ? '0' : '') + n; }
   function tick(){
-    var t = Math.max(0, target - Date.now());
-    var d = Math.floor(t / 864e5), h = Math.floor(t / 36e5) % 24, m = Math.floor(t / 6e4) % 60, s = Math.floor(t / 1e3) % 60;
-    document.getElementById('cd-d').textContent = pad(d);
-    document.getElementById('cd-h').textContent = pad(h);
-    document.getElementById('cd-m').textContent = pad(m);
-    document.getElementById('cd-s').textContent = pad(s);
+    var t = Math.max(0, WEDDING - Date.now());
+    document.getElementById('cd-d').textContent = pad(Math.floor(t / 864e5));
+    document.getElementById('cd-h').textContent = pad(Math.floor(t / 36e5) % 24);
+    document.getElementById('cd-m').textContent = pad(Math.floor(t / 6e4) % 60);
+    document.getElementById('cd-s').textContent = pad(Math.floor(t / 1e3) % 60);
+    var dk = document.getElementById('dk-d');
+    if (dk && dk.offsetParent) { dk.textContent = pad(Math.floor(t / 864e5)); document.getElementById('dk-h').textContent = pad(Math.floor(t / 36e5) % 24); document.getElementById('dk-m').textContent = pad(Math.floor(t / 6e4) % 60); document.getElementById('dk-s').textContent = pad(Math.floor(t / 1e3) % 60); }
   }
   tick(); setInterval(tick, 1000);
 
-  // ----- Calendar December 2026 (bắt đầu từ Thứ Hai) -----
-  var cal = document.getElementById('cal');
-  var heads = ['T2','T3','T4','T5','T6','T7','CN'];
-  var html = heads.map(function(h){ return '<div class="h">' + h + '</div>'; }).join('');
-  var first = (new Date(2026, 11, 1).getDay() + 6) % 7; // 0 = Thứ Hai
-  for (var i = 0; i < first; i++) html += '<div></div>';
-  var heart = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.6 2.9 4.5 6.7 4.5c2.2 0 3.6 1.2 4.3 2.4h2c.7-1.2 2.1-2.4 4.3-2.4 3.8 0 5.8 4.1 4.3 7.3C19.5 16.4 12 21 12 21z"/></svg>';
-  for (var d = 1; d <= 31; d++) {
-    html += d === 6 ? '<div class="c on" aria-label="Ngày cưới 6">' + heart + '<span>6</span></div>' : '<div class="c">' + d + '</div>';
-  }
-  cal.innerHTML = html;
+  // ----- Lịch tháng 12/2026 -----
+  var html = ['T2','T3','T4','T5','T6','T7','CN'].map(function(h){ return '<div class="h">' + h + '</div>'; }).join('');
+  var first = (new Date(2026, 11, 1).getDay() + 6) % 7;
+  for (var k = 0; k < first; k++) html += '<div></div>';
+  for (var d = 1; d <= 31; d++) html += d === 6
+    ? '<div class="c on" aria-label="Ngày cưới 6"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#heart"/></svg><span>6</span></div>'
+    : '<div class="c">' + d + '</div>';
+  document.getElementById('cal').innerHTML = html;
 
-  // ----- Album -----
-  var photos = ['03','10','14','01','15','16','17','18','19','13','06','08'];
-  var wide = { 4: true, 9: true }; // index of photos shown full width
-  var gal = document.getElementById('gal');
-  gal.innerHTML = photos.map(function(p, i){
-    var dir = wide[i] ? 'zoom' : (i % 2 ? 'right' : 'left');
-    return '<button class="rv ' + dir + (wide[i] ? ' wide' : '') + '" data-i="' + i + '" aria-label="Xem ảnh ' + (i + 1) + '"><img src="images/' + p + '.jpg" alt="" loading="lazy"></button>';
+  // ----- Album: vòng xoay 3D -----
+  var LQIP = {"a01": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAASAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDbvr5bK1NwU3RRgl8dR6Y/Gn6VeRapYpcxZwSVO4YORU32OKeye3mUOkikNVfSrNtP02G1Cj92CCR35PNUSWbcny15NOkJDcE0UUhn/9k=", "a02": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAASAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDfuLiO1tjK6sVUZO0ZIHrUKtHPGkqjh1BFW4YtwxKFdCMEEZyDUf2XywI4gFjQbVA7DtTAfATtHNSmiipGf//Z", "a03": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAASAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDZ1cXXkqLa4a2U4XeibjuJ4/D/ABq8sRCIJPmcKAzYxk+tI8MrZ2yYQrnGP4hWZf8AiSztLpreWCfzI8BsKAPXj1qkJ7GvASYhk1lalFHJcKzxox2dSoPc0UUCP//Z", "a04": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAASAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDdvLz7E6hox5bDAb/a7D6VLE0N1Ck8eGSRQQfUUajZG+0i5tVIDzIcE8c9qZZxLZ2cFsCP3SBePYUxF9P9Uv0FUZvvj6UUUDP/2Q==", "a05": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAASAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDoBeQo8qSAx+XyC38QwMkfmBUVtdWt3GXWaJyCVYr0zUmoQG40S8jQZkeJsfXFYng+1QaMfNjG8ytnPtgf0piZ0sP3PzrCsiV+0hTgfaZeB/vGiigD/9k=", "a06": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAASAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDc1S7aGxmlQAJCpZz3x7VHYk3FjBNIPmkQMcjHWsi514Ld3FiyAwmJlk9W47HtTrTXxDbrG8YfaMKwJ5HbtU3RXK2tBtnGh1tmKLkxHJx14rT0WONbNgqKB5jcAUUVHUa3P//Z", "a07": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAASAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDeupGjtWiiA3BM5IziqGnzLfWUVwEK7x0P1xVeTxHFbam0RTICne3cewqPTtXghtFi2ABCQMHgjqD+tSVyuxRgRTr2SoJMZzkdeDW7okUYsSBGoHmN0HvRRU9Rrc//2Q==", "a08": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAASAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDYvb6Rbp7dImIRVI44bJ7flU3lKwzist/EJi1GaJYxtVSXPc8cAGqlr4k8mHZNH5hBOGyeR2zx1qblcrsX7CKM3e8ou8xkFsc9KoRosZcIoUbzwBiiioW4dT//2Q==", "a09": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAASAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDUOoyw3bWsURIVFIyvBJPb8KstErMTispfEi2+pvD5Y2qpLsevA4ANRw+IljTEsZckkhgwGR2qS+VtaGdYqreJ2DKCDCcgjrxUukRo1vJuRTiVhyKKKjqNH//Z", "a10": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAASAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDcvT5MIkLrFFkq8jYwnHB/Oqt08YkH3W+UcjvTNQ1C1mtnilKtGSP3ZXPPvVNroHHCkY46Vm1oUig6L5y/KOnpVe7Vd6fKPuenuaKKoD//2Q==", "a11": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAASAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDYkWQ3PloAsTADOOdx6UzyGiJjmcSSLwXxjNPvryFrJTEitJG3mKWzjcOh4rLg1RpoVluB+9cZbYOM+1ZuyKSYawSjxhSVBIBA+tcpLI4fAdgB2B96KKUtylsf/9k=", "a12": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAASAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDcuEk2I0RAAZdw9R3p0VqsqlnYA56YzVC8v1WCMSPEcHchBzg9KxJ9Yvdy/ZppETHIQHBOfpWehdmY7Ei2jIJzx/KoVmlQYWV1HoGIooqYls//2Q==", "a13": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAASAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDfuTICqxBSzkgZPpk1VlOJCD1FQ61dO+nOigxuVJR1PPbpWUmprsUNJkqoBJ6njrWTsWkzDaR2hiy7HODyfrUM0jgRgOwGwd6KKSLZ/9k=", "a14": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAASAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDcnWTzUCYEZ++cc+1VTHs+RmMhXjeRgmnXeoOljIrMsRcfIwbnPb+tYSapIsUYMhdgvzMeST6msmWkzE3EW8eCe3f2qv58yAKsrqPQMRRRREtn/9k=", "a15": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAASAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDoWjkl/wBWQMnBJHSqrld5zUxvFFtMsZZep3gfyrHe4jJyS7E8k5rNrQpEEzutumGYfMeh96rEnPU0UVQH/9k=", "a16": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAASAAwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDqGYoECKDlgD7D1prKBgSAF8c4qVY1MZ3DnHX0qhBFLbwrFLK0zrkF25Lc8fpVElyP7oqKX79FFIZ//9k="};
+  var N = PHOTOS.length;
+  var SEC_PER_PHOTO = 4.5;   // tự trượt liên tục, khoảng 4,5 giây qua một ảnh (vừa phải, đủ để ngắm)
+  var ring = document.getElementById('ring'), countEl = document.getElementById('count');
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lbOpen = false, cur = 0, pos = 0;
+  function two(n){ return (n < 10 ? '0' : '') + n; }
+  function mod(i){ return ((i % N) + N) % N; }
+
+  ring.innerHTML = PHOTOS.map(function(p, i){
+    return '<div class="c3" data-i="' + i + '" style="background-image:url(' + LQIP[p] + ')">' +
+      '<img data-src="images/m/' + p + '.jpg" alt="Ảnh cưới ' + (i + 1) + '" decoding="async" draggable="false"></div>';
   }).join('');
-  var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), cur = 0;
-  function show(i){ cur = (i + photos.length) % photos.length; lbImg.src = 'images/' + photos[cur] + '.jpg'; lb.classList.add('open'); }
-  gal.addEventListener('click', function(e){ var b = e.target.closest('button'); if (b) show(+b.dataset.i); });
-  lb.querySelector('.x').onclick = function(){ lb.classList.remove('open'); };
-  lb.querySelector('.p').onclick = function(e){ e.stopPropagation(); show(cur - 1); };
-  lb.querySelector('.n').onclick = function(e){ e.stopPropagation(); show(cur + 1); };
-  lb.addEventListener('click', function(e){ if (e.target === lb) lb.classList.remove('open'); });
-  document.addEventListener('keydown', function(e){
-    if (!lb.classList.contains('open')) return;
-    if (e.key === 'Escape') lb.classList.remove('open');
-    if (e.key === 'ArrowLeft') show(cur - 1);
-    if (e.key === 'ArrowRight') show(cur + 1);
+  var slides = [].slice.call(ring.children);
+  function load(i){
+    var im = slides[i].querySelector('img');
+    if (im.dataset.src) {
+      im.addEventListener('load', function(){ im.classList.add('ok'); });
+      im.src = im.dataset.src; delete im.dataset.src;
+    }
+  }
+  // khoảng cách vòng tròn từ ảnh i tới vị trí p (âm: bên trái, dương: bên phải)
+  function off(i, p){ var d = ((i - p) % N + N) % N; return d > N / 2 ? d - N : d; }
+  function render(p){
+    for (var i = 0; i < N; i++) {
+      var x = off(i, p), a = Math.abs(x), s, o, c = slides[i];
+      s = a <= 1 ? 1 - .15 * a : a <= 2 ? .85 - .15 * (a - 1) : .7;
+      o = a <= 1 ? 1 - .25 * a : a <= 2 ? .75 - .25 * (a - 1) : a <= 3 ? .5 - .2 * (a - 2) : Math.max(0, .3 * (1 - (a - 3) / 1.2));
+      c.style.transform = reduce
+        ? 'translateX(' + (60 * x) + '%) scale(' + s + ')'
+        : 'translateX(' + (60 * x).toFixed(2) + '%) translateZ(' + (-150 * a).toFixed(1) + 'px) rotateY(' + (45 * x).toFixed(2) + 'deg) scale(' + s.toFixed(3) + ')';
+      c.style.opacity = o.toFixed(3);
+      c.style.zIndex = 100 - Math.round(a * 2);
+      c.style.visibility = a > 4.2 ? 'hidden' : 'visible';
+      if (a <= 2.6) load(i);
+    }
+  }
+  // ảnh đang ở giữa + bộ đếm
+  function mark(i){
+    i = mod(i);
+    if (i === cur && slides[i].classList.contains('on')) return;
+    slides[cur].classList.remove('on');
+    cur = i; slides[cur].classList.add('on');
+    countEl.innerHTML = '<b>' + two(cur + 1) + '</b> / ' + two(N);
+  }
+  // chuyển hẳn tới ảnh i (có hiệu ứng 1,1 giây), rồi mới trượt tiếp
+  function goTo(i){
+    stopGlide();
+    var p = Math.round(pos);
+    pos = p + off(mod(i), p);
+    mark(pos); render(pos);
+    holdUntil = Math.max(holdUntil, Date.now() + 1300);
+    kick();
+  }
+  function next(){ goTo(cur + 1); }
+  mark(0); render(0);
+
+  // Vuốt / kéo để xoay vòng (ảnh xoay theo ngón tay), chạm ảnh giữa để phóng to, chạm ảnh bên để xoay tới
+  var drag = null;
+  ring.addEventListener('pointerdown', function(e){
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    hold();
+    drag = { x0: e.clientX, y0: e.clientY, id: e.pointerId, w: slides[cur].offsetWidth * .6, moved: false, t0: Date.now(), p0: pos };
   });
-  var sx = 0;
-  lb.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, { passive: true });
-  lb.addEventListener('touchend', function(e){ var dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1)); });
+  ring.addEventListener('pointermove', function(e){
+    if (!drag || e.pointerId !== drag.id) return;
+    var dx = e.clientX - drag.x0, dy = e.clientY - drag.y0;
+    if (!drag.moved) {
+      if (Math.abs(dx) < 8) return;
+      if (Math.abs(dy) > Math.abs(dx)) { drag = null; goTo(Math.round(pos)); return; }   // khách đang cuộn trang
+      drag.moved = true; ring.classList.add('drag');
+      try { ring.setPointerCapture(e.pointerId); } catch (err) {}
+    }
+    pos = drag.p0 - dx / drag.w;
+    render(pos); mark(Math.round(pos));
+  });
+  function endDrag(e){
+    if (!drag || e.pointerId !== drag.id) return;
+    var d = drag; drag = null;
+    ring.classList.remove('drag');
+    if (!d.moved) {
+      var c = e.type !== 'pointercancel' && e.target.closest('.c3');
+      if (!c) { goTo(Math.round(pos)); return; }
+      var i = +c.dataset.i, center = i === cur;
+      goTo(i);
+      if (center) openLb(i, c.querySelector('img'));
+      return;
+    }
+    var dx = e.clientX - d.x0, fast = Math.abs(dx) > 25 && Date.now() - d.t0 < 260;
+    var t = Math.round(d.p0 - dx / d.w);
+    if (t === Math.round(d.p0) && (Math.abs(dx) > 40 || fast)) t += dx < 0 ? 1 : -1;
+    goTo(t);
+  }
+  ring.addEventListener('pointerup', endDrag);
+  ring.addEventListener('pointercancel', function(e){ if (drag && drag.moved) { ring.classList.remove('drag'); drag = null; goTo(Math.round(pos)); } else endDrag(e); });
+  ring.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight') { e.preventDefault(); hold(); next(); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); hold(); goTo(cur - 1); }
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); hold(); goTo(cur); openLb(cur, slides[cur].querySelector('img')); }
+  });
+  document.getElementById('rPrev').onclick = function(){ hold(); goTo(cur - 1); };
+  document.getElementById('rNext').onclick = function(){ hold(); next(); };
 
-  // ----- RSVP lưu vào Google Sheet (qua Google Apps Script, xem README.md) -----
-  // Dán link Web App của Apps Script vào đây. Để trống thì form được ẩn
-  // và khách được nhắn báo trực tiếp với gia đình, tránh việc khách tưởng đã gửi thành công.
-  var RSVP_URL = 'https://script.google.com/macros/s/AKfycbyOgCtVERtNQmSgH3tV-78X3VUBaXGB0qEG72HpJs8o8NGahWKEHhDEbQ1GXPQDS95_UQ/exec';   // vd: 'https://script.google.com/macros/s/XXXX/exec'
+  // Tự trượt liên tục (cả khi máy bật chế độ giảm chuyển động, vì đây là yêu cầu của cô dâu chú rể); tạm dừng khi khách chạm (4 giây), khi album ra khỏi màn hình, khi xem ảnh lớn, khi chuyển ứng dụng
+  var started = false, inView = false, holdUntil = 0, raf = 0, waitT = 0, vel = 0, last = 0, gliding = false;
+  function canGlide(){ return started && inView && !lbOpen && !document.hidden && !drag; }
+  function stopGlide(){
+    if (raf) cancelAnimationFrame(raf);
+    raf = 0; vel = 0;
+    if (gliding) { gliding = false; ring.classList.remove('glide'); countEl.setAttribute('aria-live', 'polite'); }
+  }
+  function kick(){
+    clearTimeout(waitT);
+    if (!canGlide()) { stopGlide(); return; }
+    var w = holdUntil - Date.now();
+    if (w > 0) { stopGlide(); waitT = setTimeout(kick, w); return; }
+    if (!raf) { last = 0; raf = requestAnimationFrame(frame); }
+  }
+  function frame(t){
+    raf = 0;
+    if (!canGlide() || Date.now() < holdUntil) { stopGlide(); kick(); return; }
+    if (!gliding) { gliding = true; ring.classList.add('glide'); countEl.setAttribute('aria-live', 'off'); }
+    var dt = last ? Math.min(.05, (t - last) / 1000) : 0; last = t;
+    vel += (1 / SEC_PER_PHOTO - vel) * Math.min(1, dt * 1.5);   // tăng tốc êm lúc bắt đầu
+    pos += vel * dt; if (pos >= N) pos -= N;
+    render(pos); mark(Math.round(pos));
+    raf = requestAnimationFrame(frame);
+  }
+  function restartTimer(){ kick(); }
+  function hold(){ holdUntil = Date.now() + 4000; stopGlide(); kick(); }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(es){ inView = es[0].isIntersecting; kick(); }, { threshold: 0.2 }).observe(ring);
+  } else inView = true;
+  document.addEventListener('visibilitychange', kick);
+  function albumStart(){ started = true; kick(); }
 
+  // ----- Xem ảnh toàn màn hình: vuốt ngang, vuốt xuống để đóng, chụm 2 ngón / chạm 2 lần để phóng -----
+  var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbBg = document.getElementById('lbBg');
+  var stage = document.getElementById('stage'), lbCount = document.getElementById('lbCount'), li = 0;
+  var S = 1, X = 0, Y = 0;           // phóng & dịch hiện tại (transform-origin 0 0)
+  function base(){ return { w: lbImg.offsetWidth, h: lbImg.offsetHeight, l: lbImg.offsetLeft, t: lbImg.offsetTop }; }
+  function apply(anim){
+    lbImg.style.transition = anim ? 'transform .3s cubic-bezier(.2,.8,.2,1)' : 'none';
+    lbImg.style.transform = 'translate(' + X + 'px,' + Y + 'px) scale(' + S + ')';
+    lb.classList.toggle('zoomed', S > 1.01);
+  }
+  function center(anim){ S = 1; X = 0; Y = 0; apply(anim); }
+  function setLb(i){
+    li = (i + N) % N;
+    var p = PHOTOS[li];
+    lbImg.src = 'images/m/' + p + '.jpg';                   // ảnh vừa đã tải sẵn: hiện ngay
+    var full = new Image();
+    full.onload = function(){ if (PHOTOS[li] === p) lbImg.src = full.src; };
+    full.src = 'images/' + p + '.jpg';                       // rồi đổi sang ảnh nét khi tải xong
+    lbCount.textContent = two(li + 1) + ' / ' + two(N);
+    [li + 1, li - 1].forEach(function(j){ (new Image()).src = 'images/m/' + PHOTOS[(j + N) % N] + '.jpg'; });
+  }
+  function openLb(i, fromImg){
+    lbOpen = true; restartTimer(); setLb(i);
+    lb.classList.add('open'); document.body.style.overflow = 'hidden';
+    S = 1; X = 0; Y = 0; apply(false);
+    if (fromImg && !reduce) {                                // phóng ra từ đúng vị trí ảnh trên thiệp
+      var r = fromImg.getBoundingClientRect();
+      requestAnimationFrame(function(){
+        var b = base(); if (!b.w) return;
+        S = r.width / b.w; X = r.left - b.l; Y = r.top - b.t; apply(false);
+        requestAnimationFrame(function(){ requestAnimationFrame(function(){ center(true); }); });
+      });
+    }
+    document.getElementById('lbClose').focus({ preventScroll: true });
+  }
+  function closeLb(){
+    lbBg.style.opacity = ''; lb.classList.remove('open', 'dragging', 'zoomed');
+    document.body.style.overflow = ''; lbOpen = false;
+    if (li !== cur) goTo(li, true);
+    slides[li].focus({ preventScroll: true });
+    restartTimer();
+  }
+  function lbGo(dir){
+    var w = stage.clientWidth;
+    S = 1; Y = 0; X = -dir * w; apply(true);
+    setTimeout(function(){
+      setLb(li + dir); X = dir * w * .5; apply(false);
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){ X = 0; apply(true); }); });
+    }, 200);
+  }
+  document.getElementById('lbClose').onclick = closeLb;
+  document.getElementById('lbPrev').onclick = function(){ lbGo(-1); };
+  document.getElementById('lbNext').onclick = function(){ lbGo(1); };
+  document.addEventListener('keydown', function(e){
+    if (!lbOpen) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') lbGo(-1);
+    if (e.key === 'ArrowRight') lbGo(1);
+  });
+
+  var pts = {}, g = null, lastTap = 0, lastTapX = 0, lastTapY = 0;
+  function dist(a, b){ return Math.hypot(a.x - b.x, a.y - b.y); }
+  function clampPan(){
+    var b = base();
+    var mx = Math.max(0, (b.w * S - stage.clientWidth) / 2), my = Math.max(0, (b.h * S - stage.clientHeight) / 2);
+    var cx = X + b.w * (S - 1) / 2, cy = Y + b.h * (S - 1) / 2;   // độ lệch của tâm ảnh
+    cx = Math.max(-mx, Math.min(mx, cx)); cy = Math.max(-my, Math.min(my, cy));
+    X = cx - b.w * (S - 1) / 2; Y = cy - b.h * (S - 1) / 2;
+  }
+  function zoomAt(ns, px, py){                               // phóng quanh điểm (px, py) trên màn hình
+    var b = base(), r = stage.getBoundingClientRect();
+    var ox = px - r.left - b.l, oy = py - r.top - b.t;
+    var ix = (ox - X) / S, iy = (oy - Y) / S;
+    S = ns; X = ox - ix * S; Y = oy - iy * S;
+  }
+  stage.addEventListener('pointerdown', function(e){
+    stage.setPointerCapture(e.pointerId);
+    pts[e.pointerId] = { x: e.clientX, y: e.clientY };
+    var ids = Object.keys(pts);
+    if (ids.length === 2) {
+      var a = pts[ids[0]], c = pts[ids[1]];
+      lbBg.style.opacity = ''; lb.classList.remove('dragging');
+      if (S <= 1.01) { X = 0; Y = 0; S = 1; }
+      g = { type: 'pinch', d0: dist(a, c), s0: S };
+    } else if (ids.length === 1) {
+      g = { type: 'one', x0: e.clientX, y0: e.clientY, X0: X, Y0: Y, dir: null, t0: Date.now() };
+    }
+  });
+  stage.addEventListener('pointermove', function(e){
+    if (!pts[e.pointerId] || !g) return;
+    pts[e.pointerId] = { x: e.clientX, y: e.clientY };
+    var ids = Object.keys(pts);
+    if (g.type === 'pinch') {
+      if (ids.length < 2) return;
+      var a = pts[ids[0]], c = pts[ids[1]];
+      zoomAt(Math.max(1, Math.min(4, g.s0 * dist(a, c) / g.d0)), (a.x + c.x) / 2, (a.y + c.y) / 2);
+      apply(false); return;
+    }
+    var dx = e.clientX - g.x0, dy = e.clientY - g.y0;
+    if (S > 1.01) { X = g.X0 + dx; Y = g.Y0 + dy; apply(false); return; }      // đang phóng: kéo để xem
+    if (!g.dir && Math.hypot(dx, dy) > 8) g.dir = Math.abs(dx) > Math.abs(dy) ? 'h' : 'v';
+    if (g.dir === 'h') { X = dx; apply(false); }
+    if (g.dir === 'v') {                                      // vuốt xuống/lên: ảnh thu nhỏ dần, nền mờ dần
+      var b = base(), s = 1 - Math.min(.25, Math.abs(dy) / 1200);
+      S = 1; X = b.w * (1 - s) / 2; Y = dy + b.h * (1 - s) / 2;
+      lbImg.style.transition = 'none';
+      lbImg.style.transform = 'translate(' + X + 'px,' + Y + 'px) scale(' + s + ')';
+      lbBg.style.opacity = Math.max(.2, .96 - Math.abs(dy) / 450);
+      lb.classList.add('dragging');
+    }
+  });
+  function end(e){
+    if (!pts[e.pointerId]) return;
+    delete pts[e.pointerId];
+    var left = Object.keys(pts).length;
+    if (g && g.type === 'pinch') {
+      if (left === 0) { if (S < 1.05) center(true); else { clampPan(); apply(true); } g = null; }
+      else { var id = Object.keys(pts)[0]; g = { type: 'one', x0: pts[id].x, y0: pts[id].y, X0: X, Y0: Y, dir: 'pan', t0: 0 }; }
+      return;
+    }
+    if (!g || left) return;
+    var dx = e.clientX - g.x0, dy = e.clientY - g.y0, dt = Date.now() - g.t0, moved = Math.hypot(dx, dy) > 10;
+    lb.classList.remove('dragging');
+    if (S > 1.01) { if (moved) { clampPan(); apply(true); g = null; return; } }
+    if (g.dir === 'h') {
+      if (Math.abs(dx) > 60 || (Math.abs(dx) > 25 && dt < 250)) lbGo(dx < 0 ? 1 : -1); else { X = 0; apply(true); }
+    } else if (g.dir === 'v') {
+      if (Math.abs(dy) > 110 || (Math.abs(dy) > 40 && dt < 250)) closeLb(); else { lbBg.style.opacity = ''; center(true); }
+    } else if (!moved) {                                      // chạm 2 lần để phóng / thu
+      var now = Date.now();
+      if (now - lastTap < 300 && Math.hypot(e.clientX - lastTapX, e.clientY - lastTapY) < 30) {
+        if (S > 1.01) center(true); else { zoomAt(2.5, e.clientX, e.clientY); clampPan(); apply(true); }
+        lastTap = 0;
+      } else { lastTap = now; lastTapX = e.clientX; lastTapY = e.clientY; }
+    }
+    g = null;
+  }
+  stage.addEventListener('pointerup', end);
+  stage.addEventListener('pointercancel', end);
+  stage.addEventListener('wheel', function(e){                // máy tính: lăn chuột để phóng
+    e.preventDefault();
+    var ns = Math.max(1, Math.min(4, S * (e.deltaY < 0 ? 1.15 : 1 / 1.15)));
+    if (ns === 1) center(true); else { zoomAt(ns, e.clientX, e.clientY); clampPan(); apply(false); }
+  }, { passive: false });
+
+  // ----- Hộp quà -----
+  var box = document.getElementById('giftBox'), bank = document.getElementById('bank');
+  box.addEventListener('click', function(){
+    var open = !box.classList.contains('open');
+    box.classList.toggle('open', open); bank.classList.toggle('show', open);
+    box.setAttribute('aria-expanded', open);
+    document.getElementById('tap').textContent = open ? 'Nhấn để đóng' : 'Nhấn để mở';
+  });
+  document.getElementById('copyAcc').addEventListener('click', function(){
+    var btn = this, txt = document.getElementById('accNo').textContent;
+    function ok(){ btn.textContent = 'Đã sao chép'; setTimeout(function(){ btn.textContent = 'Sao chép số tài khoản'; }, 2000); }
+    if (navigator.clipboard) navigator.clipboard.writeText(txt).then(ok, sel); else sel();
+    function sel(){ var r = document.createRange(); r.selectNodeContents(document.getElementById('accNo')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Đã chọn, bấm Sao chép'; }
+  });
+
+  // ----- Xác nhận tham dự (Google Sheet) -----
   var form = document.getElementById('rsvp'), thanks = document.getElementById('thanks');
   if (!RSVP_URL) {
     form.style.display = 'none';
@@ -477,43 +979,88 @@
   }
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    var f = new FormData(form), name = (f.get('name') || '').trim() || 'bạn';
-    var yes = f.get('attend') === 'yes';
+    var f = new FormData(form), name = (f.get('name') || '').trim() || 'bạn', yes = f.get('attend') === 'yes';
     var body = new URLSearchParams({
-      name: name,
-      attend: yes ? 'Sẽ tham dự' : 'Không tham dự',
-      count: yes ? f.get('count') : '0',
-      msg: (f.get('msg') || '').trim().slice(0, 1000),
-      guest: to || '',
-      card: 'Nhà trai',
-      page: location.href
+      name: name, attend: yes ? 'Sẽ tham dự' : 'Không tham dự', count: yes ? f.get('count') : '0',
+      msg: '', guest: to || '', card: CARD, page: location.href
     });
     var btn = form.querySelector('button[type=submit]');
     btn.disabled = true; btn.textContent = 'Đang gửi…';
-    function show(ok){
-      thanks.textContent = ok
-        ? (yes ? 'Cảm ơn ' + name + '! Gia đình rất vui được đón tiếp bạn vào ngày 06.12.2026.'
-               : 'Cảm ơn ' + name + ' đã báo cho chúng mình. Hẹn gặp bạn dịp khác nhé!')
-        : 'Chưa gửi được, bạn kiểm tra kết nối mạng rồi thử lại nhé.';
-      thanks.style.display = 'block';
-      if (ok) form.style.display = 'none'; else { btn.disabled = false; btn.textContent = 'Gửi xác nhận'; }
-    }
-    // Apps Script không trả CORS cho trang khác, nên gửi kiểu no-cors: chỉ phát hiện được lỗi mạng.
-    fetch(RSVP_URL, { method: 'POST', mode: 'no-cors', body: body })
-      .then(function(){ show(true); }, function(){ show(false); });
+    fetch(RSVP_URL, { method: 'POST', mode: 'no-cors', body: body }).then(function(){
+      thanks.textContent = yes ? 'Cảm ơn ' + name + '! Gia đình rất vui được đón tiếp bạn vào ngày 06.12.2026.'
+                               : 'Cảm ơn ' + name + ' đã báo cho chúng mình. Hẹn gặp bạn dịp khác nhé!';
+      thanks.style.display = 'block'; form.style.display = 'none';
+    }, function(){
+      thanks.textContent = 'Chưa gửi được, bạn kiểm tra kết nối mạng rồi thử lại nhé.';
+      thanks.style.display = 'block'; btn.disabled = false; btn.textContent = 'Gửi xác nhận';
+    });
   });
 
-  // ----- Scroll reveal -----
+  // ----- Sổ lưu bút: lời chúc lưu vào Google Sheet (cùng Apps Script với xác nhận tham dự) -----
+  var SUGGEST = [
+    'Chúc hai bạn trăm năm hạnh phúc, bạc đầu giai lão, sớm có tin vui nhé!',
+    'Chúc Nga và Đức mãi yêu thương nhau như ngày đầu, cùng nhau xây tổ ấm thật ngọt ngào.',
+    'Chúc mừng hạnh phúc hai bạn! Mong rằng mỗi ngày bên nhau đều là một ngày vui.',
+    'Chúc cô dâu chú rể đồng lòng, thuận vợ thuận chồng tát biển Đông cũng cạn!',
+    'Chúc gia đình nhỏ của hai bạn luôn đầy ắp tiếng cười, bình an và sung túc.',
+    'Hôm nay là ngày đẹp nhất của hai bạn. Chúc tình yêu của hai bạn mãi nở hoa!',
+    'Chúc hai bạn luôn nắm chặt tay nhau qua mọi buồn vui của cuộc sống.',
+    'Chúc mừng đám cưới! Mong hai bạn luôn hiểu, thương và trân trọng nhau.',
+    'Chúc Trung Đức và Thanh Nga hạnh phúc viên mãn, sớm đón thiên thần nhỏ nhé!',
+    'Một chương mới đã bắt đầu. Chúc hai bạn viết nên câu chuyện thật đẹp cùng nhau.'
+  ];
+  var wForm = document.getElementById('wishForm'), wName = document.getElementById('wName'), wMsg = document.getElementById('wMsg');
+  var wNote = document.getElementById('wNote'), wList = document.getElementById('wishes'), wEmpty = document.getElementById('wEmpty');
+  var wand = document.getElementById('wand'), lastSug = -1;
+  if (to) wName.value = to;
+  wand.addEventListener('click', function(){
+    var i; do { i = Math.floor(Math.random() * SUGGEST.length); } while (i === lastSug && SUGGEST.length > 1);
+    lastSug = i; wMsg.value = SUGGEST[i];
+    wand.classList.remove('spin'); void wand.offsetWidth; wand.classList.add('spin');
+    wMsg.focus();
+  });
+  function esc(s){ var d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }
+  function wishHtml(w, when){
+    var t = when || (w.at ? new Date(w.at).toLocaleDateString('vi-VN') : '');
+    return '<div class="wish"><b>' + esc(w.name) + '</b><p>' + esc(w.msg) + '</p>' + (t ? '<time>' + esc(t) + '</time>' : '') + '</div>';
+  }
+  function showNote(msg){ wNote.textContent = msg; wNote.style.display = 'block'; }
+  function loadWishes(){
+    if (!RSVP_URL) return;
+    fetch(RSVP_URL + '?wishes=1').then(function(r){ return r.json(); }).then(function(list){
+      if (!Array.isArray(list)) return;
+      wEmpty.hidden = list.length > 0;
+      wList.innerHTML = list.map(function(w){ return wishHtml(w); }).join('');
+    }).catch(function(){ /* không tải được: giữ nguyên danh sách đang hiện */ });
+  }
+  wForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = wName.value.trim(), msg = wMsg.value.trim();
+    if (!name || !msg) return;
+    if (!RSVP_URL) { showNote('Sổ lưu bút chưa được kết nối nên lời chúc chưa gửi được. Bạn vui lòng thử lại sau nhé!'); return; }
+    var btn = document.getElementById('wSend');
+    btn.disabled = true; btn.textContent = 'Đang gửi…';
+    var body = new URLSearchParams({ name: name, attend: 'Lưu bút', count: '', msg: msg.slice(0, 500), guest: to || '', card: CARD, page: location.href });
+    fetch(RSVP_URL, { method: 'POST', mode: 'no-cors', body: body }).then(function(){
+      wList.insertAdjacentHTML('afterbegin', wishHtml({ name: name, msg: msg }, 'Vừa xong'));
+      wEmpty.hidden = true; wMsg.value = '';
+      showNote('Cảm ơn ' + name + ' đã gửi lời chúc đến cô dâu chú rể!');
+      setTimeout(loadWishes, 4000);
+    }, function(){
+      showNote('Chưa gửi được, bạn kiểm tra kết nối mạng rồi thử lại nhé.');
+    }).then(function(){ btn.disabled = false; btn.textContent = 'Gửi lời chúc'; });
+  });
+  loadWishes();
+
+  // ----- Hiệu ứng khi cuộn -----
   var io;
   function reveal(){
-    if (io) return;
-    var els = document.querySelectorAll('.rv');
-    if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (io || !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     document.documentElement.classList.add('anim');
     io = new IntersectionObserver(function(entries){
       entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-    els.forEach(function(el){ io.observe(el); });
+    document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
   }
 })();
 </script>
