@@ -101,7 +101,7 @@
   .hero .hdate{font:600 15px var(--display);letter-spacing:.3em;color:var(--muted);margin-top:-6px;padding-bottom:22px}
 
   /* ---------- Family ---------- */
-  .fam{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+  .fam{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;align-items:start}
   .fam > div{min-width:0}
   .fam .side{font:italic 600 22px var(--display);color:var(--sage)}
   .fam .who{font-size:14.5px;line-height:1.8;margin-top:6px}
@@ -262,7 +262,8 @@
   .desk{display:none}
   @media (hover:hover) and (pointer:fine){ .ring{cursor:grab} .ring.drag{cursor:grabbing} }
   @media (min-width:1000px){
-    html{background:linear-gradient(160deg,#fbfcf6,#e2e9d0) fixed}
+    html{background:#e9efdc}
+    body::before{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(160deg,#fbfcf6,#e2e9d0);pointer-events:none}
     body{background:transparent;display:grid;grid-template-columns:minmax(0,1fr) 440px;column-gap:clamp(40px,5vw,96px);max-width:1280px;margin:0 auto;padding:0 clamp(24px,4vw,56px)}
     .card{max-width:none;width:440px;margin:0;box-shadow:0 0 0 1px var(--line),0 30px 80px rgba(47,56,38,.16)}
     .music{right:calc((100vw - min(1280px,100vw)) / 2 + clamp(24px,4vw,56px) + 16px);bottom:24px}
@@ -384,12 +385,12 @@
   <section>
     <h2 class="title rv up">Thông tin lễ cưới<svg viewBox="0 0 70 12" aria-hidden="true"><path d="M0 6h26M44 6h26" stroke="currentColor" stroke-width="1"/><use href="#leaf" x="29" y="-3" width="12" height="18" fill="currentColor"/></svg></h2>
     <div class="fam">
-      <div class="rv left">
+      <div class="rv">
         <div class="side">Nhà trai</div>
         <div class="who">Ông <b>Ngô Đăng Ngà</b><br>Bà <b>Nguyễn Thị Thường</b></div>
         <div class="addr">Thôn 10, xã Thượng Bằng La, tỉnh Lào Cai</div>
       </div>
-      <div class="rv right">
+      <div class="rv">
         <div class="side">Nhà gái</div>
         <div class="who">Ông <b>Bùi Văn Soạn</b><br>Bà <b>Nguyễn Thị Tiễn</b></div>
         <div class="addr">Thôn Mê Linh 1, xã Bắc Tiên Hưng, tỉnh Hưng Yên</div>
